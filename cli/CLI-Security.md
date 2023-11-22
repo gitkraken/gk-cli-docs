@@ -1,9 +1,9 @@
 ---
 
-title: Security Information - Gitlens
-description: Data Security Information for GL
+title: Security Information - Gitkraken CLI
+description: Data Security Information for Gitkraken CLI
 taxonomy:
-    category: gitlens
+    category: cli
 
 ---
 
