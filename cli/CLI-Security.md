@@ -1,7 +1,7 @@
 ---
 
-title: Security Information - Gitkraken CLI
-description: Data Security Information for Gitkraken CLI
+title: Security Information - GitKraken CLI
+description: Data Security Information for GitKraken CLI
 taxonomy:
     category: cli
 
