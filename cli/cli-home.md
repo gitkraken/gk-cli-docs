@@ -21,7 +21,7 @@ GitKraken CLI is available on macOS, Windows and Unix systems.
 
 ## Documentation
 
-Check out the [installation instructions](/gitkraken-client/gitkraken-cli/#Installation) and [examples](/gitkraken-client/gitkraken-cli/#Examples) below. For command usage [see the docs](https://gitkraken.github.io/gk-cli/).
+Check out the [installation instructions](/gitkraken-client/gitkraken-cli/#Installation) and [examples](/gitkraken-client/gitkraken-cli/#Examples) below. For command usage [see the docs](https://gitkraken.github.io/gk-cli/docs/gk.html).
 
 ***
 
