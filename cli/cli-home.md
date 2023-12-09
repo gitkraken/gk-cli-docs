@@ -189,3 +189,46 @@ gk ws graph
 Open a visual graph of the repo in your current directory in either [GitKraken Client](https://www.gitkraken.com/git-client) or [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) in VS Code.
 
 <img src='/wp-content/uploads/cli-gk-graph.gif' class='img-bordered img-responsive center'>
+
+## Cloud Patches
+
+### What are Cloud Patches and why would you want to use them
+
+A Cloud Patch is a Git patch that GitKraken securely stores for you so it can be easily shared with others across the GitKraken CLI, GitKraken Client, and GitLens. The patch is directly transferred from your machine into secure storage. 
+
+Cloud Patches allow the ability to engage early with your team before a pull request. They can be created as soon as you have a work in progress. This can help with collaborating on changes prior to a pull request and minimize the delay of pull request reviews.
+
+### How to setup Cloud Patches 
+
+Cloud Patches are enabled in the GitKraken CLI by default. 
+
+### How to work with Cloud Patches
+
+To work with Cloud Patches, use `gk patch [command]`. You can run `gk patch` to see all options offered and what they do.
+
+<img src="/wp-content/uploads/gk-cli-gk-patch.png" class="img-bordered img-responsive center">
+
+To create a Cloud Patch, run `gk patch create`. You will be prompted to provide information about the patch and what it should be created from. Once the process is completed, you will be provided with a link that can be used by yourself or others to open the cloud patch in GitKraken Client or GitLens. From there, the patch can be applied in either client to work with those changes. To apply a Cloud Patch at a later time to the current repository, you can run `gk patch apply`.
+
+<img src="/wp-content/uploads/gk-cli-patch-create-example.gif" class="img-bordered img-responsive center">
+
+Cloud Patches can be viewed from URLs shared to you and they can be applied to your working tree or to a new or existing branch. Simply select or open the link and then follow the prompts within GitLens or GitKraken Client to apply the Cloud Patch.
+
+<img src='/wp-content/uploads/gkc-apply-cloud-patch.gif' class='img-bordered img-responsive center'>
+
+Here are some other helpful commands to be used with Cloud Patches:
+
+* `gk patch view` - preview the changes of a Cloud Patch
+* `gk patch list` - list all your Cloud Patches
+* `gk patch delete` - delete a Cloud Patch
+
+### Known issues and workarounds
+
+*What if I do not want GitKraken to host my Cloud Patches or have my Cloud Patch data stored on your servers?*
+
+We offer the ability for you to host Cloud Patches on your own AWS S3 storage instances. In order to set this up, please reach out to our [support team](https://help.gitkraken.com/gitkraken-client/contact-support/) and include the following information about your bucket:
+ 
+ * Name of AWS bucket
+ * AWS region the bucket is located in
+
+ Once we have that information, we will provide you with a bucket policy that can be attached to your bucket through the Permissions Bucket Policy Editor. After that is completed, Cloud Patches will be stored on your own bucket. 
