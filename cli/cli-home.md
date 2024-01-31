@@ -214,7 +214,7 @@ To create a Cloud Patch, run `gk patch create`. You will be prompted to provide 
 
 Cloud Patches can be viewed from URLs shared to you and they can be applied to your working tree or to a new or existing branch. Simply select or open the link and then follow the prompts within GitLens or GitKraken Client to apply the Cloud Patch.
 
-<img src='/wp-content/uploads/gkc-apply-cloud-patch.gif' class='img-bordered img-responsive center'>
+<img src='/wp-content/uploads/gkc-apply-cloud-patch-example.gif' class='img-bordered img-responsive center'>
 
 Here are some other helpful commands to be used with Cloud Patches:
 
