@@ -222,13 +222,6 @@ Here are some other helpful commands to be used with Cloud Patches:
 * `gk patch list` - list all your Cloud Patches
 * `gk patch delete` - delete a Cloud Patch
 
-### Known issues and workarounds
+### Self-Hosting Cloud Patch data
 
-*What if I do not want GitKraken to host my Cloud Patches or have my Cloud Patch data stored on your servers?*
-
-We offer the ability for you to host Cloud Patches on your own AWS S3 storage instances. In order to set this up, please reach out to our [support team](https://help.gitkraken.com/gitkraken-client/contact-support/) and include the following information about your bucket:
- 
- * Name of AWS bucket
- * AWS region the bucket is located in
-
- Once we have that information, we will provide you with a bucket policy that can be attached to your bucket through the Permissions Bucket Policy Editor. After that is completed, Cloud Patches will be stored on your own bucket. 
+If you do not want your Cloud Patch data stored on GitKraken Servers, we offer the ability for you to host Cloud Patches on your own AWS S3 storage instance. For more information on configuring this, see our documentation [here](/gk-dev/gk-dev-home/#self-hosted).
