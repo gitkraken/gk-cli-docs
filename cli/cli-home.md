@@ -208,7 +208,15 @@ To work with Cloud Patches, use `gk patch [command]`. You can run `gk patch` to 
 
 <img src="/wp-content/uploads/gk-cli-gk-patch.png" class="img-bordered img-responsive center">
 
-To create a Cloud Patch, run `gk patch create`. You will be prompted to provide information about the patch and what it should be created from. Once the process is completed, you will be provided with a link that can be used by yourself or others to open the cloud patch in GitKraken Client or GitLens. From there, the patch can be applied in either client to work with those changes. To apply a Cloud Patch at a later time to the current repository, you can run `gk patch apply`.
+To create a Cloud Patch, run `gk patch create`. You will be prompted to provide information about the patch and what it should be created from. †You have the following sharing options:
+
+- `Public`: Anyone that you share the public link with will be able to work with the Cloud Patch.
+
+- `Invite Only`: Only users in the GitKraken Organization who have been selected when sharing will be able to work with the Cloud Patch. They will be required to authenticate with a GitKraken account to access it.
+
+- `Private`: Anyone in the GitKraken Organization will be able to work with the Cloud Patch. They will be required to authenticate with a GitKraken account to access it.
+
+Once the process is completed, you will be provided with a link that can be used by yourself or others to open the cloud patch in GitKraken Client or GitLens. From there, the patch can be applied in either client to work with those changes. To apply a Cloud Patch at a later time to the current repository, you can run `gk patch apply`.
 
 <img src="/wp-content/uploads/gk-cli-patch-create-example.gif" class="img-bordered img-responsive center">
 
