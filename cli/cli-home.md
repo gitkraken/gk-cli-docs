@@ -13,10 +13,6 @@ taxonomy:
 
 GitKraken CLI is available on macOS, Windows and Unix systems.
 
-<div class='callout callout--basic'>
-   	<p>Note: GitKraken CLI is currently a preview.</p>
-</div>
-
 ***
 
 ## Documentation
