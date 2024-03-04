@@ -49,12 +49,19 @@ Or download it from the [releases page](https://github.com/gitkraken/gk-cli/rele
 mv ~/Downloads/gk /usr/local/bin/gk
 ``` 
 
-### Unix
+### Unix / Ubuntu
 
 `gk` is available as a downloadable binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest). Once you have it, add it to your binaries folder:
 
 ```
 mv ~/Downloads/gk /usr/local/bin/gk
+``` 
+
+Or create a new directory, move the binary and add it to $PATH:
+```
+mkdir "$HOME/cli"
+mv ~/Downloads/gk "$HOME/cli"
+export PATH="$HOME/gk:$PATH"
 ``` 
 
 You can also [download](https://github.com/gitkraken/gk-cli/releases/latest) your corresponding package (`.deb`, `.rpm`) and install it with:
@@ -77,10 +84,10 @@ sudo rpm -i ./gk.rpm
 winget install gitkraken.cli
 ```
 
-You can also download it using [Chocolately](https://community.chocolatey.org/packages/GKCLI):
+You can also download it using [Chocolatey](https://community.chocolatey.org/packages/GKCLI):
 
 ```
-choco install gkcli --version=1.0.7
+choco install gkcli
 ```
 
 Or download the binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest) and place the `gk.exe` in a desired folder. Then edit your environment variables to add it to your PATH.
