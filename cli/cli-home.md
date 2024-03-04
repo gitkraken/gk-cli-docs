@@ -57,7 +57,7 @@ mv ~/Downloads/gk /usr/local/bin/gk
 mv ~/Downloads/gk /usr/local/bin/gk
 ``` 
 
-You can also [download](https://github.com/gitkraken/gk-cli/releases/latest) your corresponding package (`.dev`, `.rpm`) and install it with:
+You can also [download](https://github.com/gitkraken/gk-cli/releases/latest) your corresponding package (`.deb`, `.rpm`) and install it with:
 
 ```
 sudo apt install ./gk.deb
@@ -94,7 +94,49 @@ Or download the binary from the [releases page](https://github.com/gitkraken/gk-
 
 ***
 
+## Configuration
+
+### Nerd Fonts
+
+The GitKraken CLI supports Nerd Fonts to display icons for some commands. To ensure correct icon rendering, please obtain and install a Nerd Font available at https://www.nerdfonts.com/. After installation, set the selected Nerd Font as the default font for your terminal.
+
+***
+
+## Troubleshooting
+
+### ```gk login``` freezes after authenticating in browser
+
+This problem is due to the browser. Currently we know that Safari and Brave do not allow to respond to localhost through port 1314. To fix this, change your default browser or copy the URL before the redirect and open it in another browser.
+
+### gk from Oh-My-Zsh
+
+Oh-My-Zsh has ```gitk``` aliased as ```gk``` and that can create some problems. To fix this, type in your terminal:
+
+```
+unalias gk
+```
+
+***
+
 ## Examples
+
+### 🎯 Focus View
+
+```
+gk focus
+```
+
+GitKraken Focus View is a unified dashboard that consolidates PRs, Issues, and WIPs across all of the repositories in a [Cloud Workspace](/cli/cli-home/#create-workspaces-to-group-repos). You can view the details of any item and take action on your most important tasks.
+
+<img src="/wp-content/uploads/cli-focus-view.png" class="img-responsive center img-bordered">
+
+#### Pin items to keep them at the top of your list
+
+Use the shortcut <kbd>p</kbd> to pin any PR or Issue to the top of the list. You can unpin an item by using the same shortcut on any pinned item.
+
+#### Snooze items to save them for later
+
+Use the shortcut <kbd>s</kbd> to snooze any PR or Issue, removing them from the list of items. You can view snoozed items by navigating to the `Snoozed` tab in the Focus View. You can unsnooze items and bring them back into your Focus View lists by using the same shortcut on any snoozed item.
 
 ### Create Workspaces to group repos
 
@@ -105,9 +147,11 @@ gk ws create
 GitKraken workspaces associate groups of repos and set the context for helpful commands that can operate on, or get information for, multiple repos at once. There are two types of workspaces:
 
 #### Local
+
 Local Workspaces exist only on your machine.
 
 #### Cloud
+
 Cloud Workspaces are accessible on any machine, and can be connected to hosting and issue providers like GitHub and GitLab to get additional information about pull requests and issues. Share Cloud Workspaces with your team to improve onboarding with the ability to clone all repos at once. To enable this extra functionality, Cloud Workspaces require a free GitKraken account. We are continuing to evolve and improve GitKraken Workspaces and welcome any feedback.
 
 <img src="/wp-content/uploads/cli-ws-create.png" class="img-responsive center img-bordered">
