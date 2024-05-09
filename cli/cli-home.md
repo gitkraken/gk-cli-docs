@@ -177,9 +177,7 @@ To start, navigate (`cd`) to a repository with an open pull request. Then, check
 
 Once you are ready to suggest the changes, run `gk pr suggest`, 
 
-<!--->
-gif of process
---->
+<img src="/wp-content/uploads/cli-create-code-suggestion.gif" class="img-bordered img-responsive center">
 
 This will include a comment on the pull request with two options: you can select _Code Suggestion for #PR_ to open the suggestion in gitkraken.dev or select _locally on your machine_ to open the suggestion in GitKraken or GitLens.
 
