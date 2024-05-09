@@ -7,7 +7,7 @@ taxonomy:
 
 ---
 
-`gk` is GitKraken on the command line. It makes working across multiple repos easier with Workspaces, provides access to pull requests and issues from multiple services (GitHub, GitLab, Bitbucket, etc.), and seamlessly connects with [GitKraken Client](https://www.gitkraken.com/git-client) and [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) in VS Code to visualize `git` information when you need it.
+`gk` is GitKraken on the command line. It makes working across multiple repos easier with Workspaces, provides access to pull requests and issues from multiple services (GitHub, GitLab, Bitbucket, etc.), and seamlessly connects with [GitKraken Desktop](https://www.gitkraken.com/git-client) and [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) in VS Code to visualize `git` information when you need it.
 
 <img src="/wp-content/uploads/cli-gk.png" class="img-responsive center img-bordered">
 
@@ -125,7 +125,7 @@ unalias gk
 
 ### What are Cloud Patches and why would you want to use them
 
-A Cloud Patch is a Git patch that GitKraken securely stores for you so it can be easily shared with others across the GitKraken CLI, GitKraken Client, and GitLens. The patch is directly transferred from your machine into secure storage. 
+A Cloud Patch is a Git patch that GitKraken securely stores for you so it can be easily shared with others across the GitKraken CLI, GitKraken Desktop, and GitLens. The patch is directly transferred from your machine into secure storage. 
 
 Cloud Patches allow the ability to engage early with your team before a pull request. They can be created as soon as you have a work in progress. This can help with collaborating on changes prior to a pull request and minimize the delay of pull request reviews.
 
@@ -147,11 +147,11 @@ To create a Cloud Patch, run `gk patch create`. You will be prompted to provide 
 
 - `Private`: Anyone in the GitKraken Organization will be able to work with the Cloud Patch. They will be required to authenticate with a GitKraken account to access it.
 
-Once the process is completed, you will be provided with a link that can be used by yourself or others to open the cloud patch in GitKraken Client or GitLens. From there, the patch can be applied in either client to work with those changes. To apply a Cloud Patch at a later time to the current repository, you can run `gk patch apply`.
+Once the process is completed, you will be provided with a link that can be used by yourself or others to open the cloud patch in GitKraken Desktop or GitLens. From there, the patch can be applied in either client to work with those changes. To apply a Cloud Patch at a later time to the current repository, you can run `gk patch apply`.
 
 <img src="/wp-content/uploads/gk-cli-patch-create-example.gif" class="img-bordered img-responsive center">
 
-Cloud Patches can be viewed from URLs shared to you and they can be applied to your working tree or to a new or existing branch. Simply select or open the link and then follow the prompts within GitLens or GitKraken Client to apply the Cloud Patch.
+Cloud Patches can be viewed from URLs shared to you and they can be applied to your working tree or to a new or existing branch. Simply select or open the link and then follow the prompts within GitLens or GitKraken Desktop to apply the Cloud Patch.
 
 <img src='/wp-content/uploads/gkc-apply-cloud-patch-example.gif' class='img-bordered img-responsive center'>
 
@@ -169,7 +169,7 @@ If you do not want your Cloud Patch data stored on GitKraken Servers, we offer t
 
 ## Code Suggest
 
-GitKraken Code Suggest simplifies code review by allowing you to make suggestions and edits across the entire project, not just on the lines that were changed, within GitLens, GitKraken Client, and gitkraken.dev. When a Pull Request is open, you can make suggestions to the pull request that others can then review and accept to include in the pull request. 
+GitKraken Code Suggest simplifies code review by allowing you to make suggestions and edits across the entire project, not just on the lines that were changed, within GitLens, GitKraken Desktop, and gitkraken.dev. When a Pull Request is open, you can make suggestions to the pull request that others can then review and accept to include in the pull request. 
 
 <img src="/wp-content/uploads/cli-code-suggest.png" class="img-bordered img-responsive center">
 
