@@ -179,7 +179,7 @@ Once you are ready to suggest the changes, run `gk pr suggest`,
 
 <img src="/wp-content/uploads/cli-create-code-suggestion.gif" class="img-bordered img-responsive center">
 
-This will include a comment on the pull request with two options: you can select _Code Suggestion for #PR_ to open the suggestion in gitkraken.dev or select _locally on your machine_ to open the suggestion in GitKraken or GitLens.
+This will include a comment on the pull request with two options: you can select _Code Suggestion for #PR_ to open the suggestion in gitkraken.dev or select _locally on your machine_ to open the suggestion in [GitKraken Desktop](/gitkraken-client/pull-requests/#review-code-and-suggest-changes) or [GitLens](/gitlens/gitlens-features/#code-suggest-preview).
 
 <img src="/wp-content/uploads/gl-code-suggest-comment.png" class="img-bordered img-responsive center">
 
