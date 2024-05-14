@@ -7,7 +7,7 @@ taxonomy:
 
 ---
 
-`gk` is GitKraken on the command line. It makes working across multiple repos easier with Workspaces, provides access to pull requests and issues from multiple services (GitHub, GitLab, Bitbucket, etc.), and seamlessly connects with [GitKraken Client](https://www.gitkraken.com/git-client) and [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) in VS Code to visualize `git` information when you need it.
+`gk` is GitKraken on the command line. It makes working across multiple repos easier with Workspaces, provides access to pull requests and issues from multiple services (GitHub, GitLab, Bitbucket, etc.), and seamlessly connects with [GitKraken Desktop](https://www.gitkraken.com/git-client) and [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) in VS Code to visualize `git` information when you need it.
 
 <img src="/wp-content/uploads/cli-gk.png" class="img-responsive center img-bordered">
 
@@ -121,17 +121,87 @@ unalias gk
 
 ***
 
+## Cloud Patches
+
+### What are Cloud Patches and why would you want to use them
+
+A Cloud Patch is a Git patch that GitKraken securely stores for you so it can be easily shared with others across the GitKraken CLI, GitKraken Desktop, and GitLens. The patch is directly transferred from your machine into secure storage. 
+
+Cloud Patches allow the ability to engage early with your team before a pull request. They can be created as soon as you have a work in progress. This can help with collaborating on changes prior to a pull request and minimize the delay of pull request reviews.
+
+### How to setup Cloud Patches 
+
+Cloud Patches are enabled in the GitKraken CLI by default. 
+
+### How to work with Cloud Patches
+
+To work with Cloud Patches, use `gk patch [command]`. You can run `gk patch` to see all options offered and what they do.
+
+<img src="/wp-content/uploads/gk-cli-gk-patch.png" class="img-bordered img-responsive center">
+
+To create a Cloud Patch, run `gk patch create`. You will be prompted to provide information about the patch and what it should be created from. †You have the following sharing options:
+
+- `Public`: Anyone that you share the public link with will be able to work with the Cloud Patch.
+
+- `Invite Only`: Only users in the GitKraken Organization who have been selected when sharing will be able to work with the Cloud Patch. They will be required to authenticate with a GitKraken account to access it.
+
+- `Private`: Anyone in the GitKraken Organization will be able to work with the Cloud Patch. They will be required to authenticate with a GitKraken account to access it.
+
+Once the process is completed, you will be provided with a link that can be used by yourself or others to open the cloud patch in GitKraken Desktop or GitLens. From there, the patch can be applied in either client to work with those changes. To apply a Cloud Patch at a later time to the current repository, you can run `gk patch apply`.
+
+<img src="/wp-content/uploads/gk-cli-patch-create-example.gif" class="img-bordered img-responsive center">
+
+Cloud Patches can be viewed from URLs shared to you and they can be applied to your working tree or to a new or existing branch. Simply select or open the link and then follow the prompts within GitLens or GitKraken Desktop to apply the Cloud Patch.
+
+<img src='/wp-content/uploads/gkc-apply-cloud-patch-example.gif' class='img-bordered img-responsive center'>
+
+Here are some other helpful commands to be used with Cloud Patches:
+
+* `gk patch view` - preview the changes of a Cloud Patch
+* `gk patch list` - list all your Cloud Patches
+* `gk patch delete` - delete a Cloud Patch
+
+### Self-Hosting Cloud Patch data
+
+If you do not want your Cloud Patch data stored on GitKraken Servers, we offer the ability for you to host Cloud Patches on your own AWS S3 storage instance. For more information on configuring this, see our documentation [here](/gk-dev/gk-dev-home/#self-hosted).
+
+***
+
+## Code Suggest
+
+GitKraken Code Suggest simplifies code review by allowing you to make suggestions and edits across the entire project, not just on the lines that were changed, within GitLens, GitKraken Desktop, and gitkraken.dev. When a Pull Request is open, you can make suggestions to the pull request that others can then review and accept to include in the pull request. 
+
+<img src="/wp-content/uploads/cli-code-suggest.png" class="img-bordered img-responsive center">
+
+To start, navigate (`cd`) to a repository with an open pull request. Then, check out the branch with the open pull request (`git checkout branch-name`). Next, begin making the desired changes locally that you would like to include as suggestions. The [Launchpad](/cli/cli-home/#%f0%9f%8e%af-launchpad) can quickly help you see open pull requests, check out branches, and begin working. 
+
+Once you are ready to suggest the changes, run `gk pr suggest`, 
+
+<img src="/wp-content/uploads/cli-create-code-suggestion.gif" class="img-bordered img-responsive center">
+
+This will include a comment on the pull request with two options: you can select _Code Suggestion for #PR_ to open the suggestion in gitkraken.dev or select _locally on your machine_ to open the suggestion in [GitKraken Desktop](/gitkraken-client/pull-requests/#review-code-and-suggest-changes) or [GitLens](/gitlens/gitlens-features/#code-suggest-preview).
+
+<img src="/wp-content/uploads/gl-code-suggest-comment.png" class="img-bordered img-responsive center">
+
+When selecting the _Code Suggestion for #PR_ you will be taken to gitkraken.dev to review and accept the changes. Here, you can review the changes by selecting each file and once you are ready, you can select _Commit Suggestions_. This will create a new commit on the remote for the existing branch (shown under _COMMIT SUGGESTIONS TO_). 
+
+<img src="/wp-content/uploads/gl-accept-code-suggestion.gif" class="img-bordered img-responsive center">
+
+When selecting _locally on your machine_ you can open them on GitLens or GitKraken Desktop. Here, you can review the changes by selecting each file and once you are ready, you can select _Apply_ to apply to the branch you currently have checked out or select the dropdown and then _Apply to a Branch_ to apply to a new branch or select an existing branch. This will apply the patch locally. 
+
+<img src="/wp-content/uploads/gl-accept-code-suggestion-from-gl.gif" class="img-bordered img-responsive center">
+
 ## Examples
 
-### 🎯 Focus View
+### 🎯 Launchpad
 
 ```
-gk focus
+gk launchpad
 ```
 
-GitKraken Focus View is a unified dashboard that consolidates PRs, Issues, and WIPs across all of the repositories in a [Cloud Workspace](/cli/cli-home/#create-workspaces-to-group-repos). You can view the details of any item and take action on your most important tasks.
+GitKraken Launchpad is a unified dashboard that consolidates PRs, Issues, and WIPs across all of the repositories in a [Cloud Workspace](/cli/cli-home/#create-workspaces-to-group-repos). You can view the details of any item and take action on your most important tasks.
 
-<img src="/wp-content/uploads/cli-focus-view.png" class="img-responsive center img-bordered">
+<img src="/wp-content/uploads/cli-launchpad.png" class="img-responsive center img-bordered">
 
 #### Pin items to keep them at the top of your list
 
@@ -139,7 +209,7 @@ Use the shortcut <kbd>p</kbd> to pin any PR or Issue to the top of the list. You
 
 #### Snooze items to save them for later
 
-Use the shortcut <kbd>s</kbd> to snooze any PR or Issue, removing them from the list of items. You can view snoozed items by navigating to the `Snoozed` tab in the Focus View. You can unsnooze items and bring them back into your Focus View lists by using the same shortcut on any snoozed item.
+Use the shortcut <kbd>s</kbd> to snooze any PR or Issue, removing them from the list of items. You can view snoozed items by navigating to the `Snoozed` tab in the Launchpad. You can unsnooze items and bring them back into your Launchpad lists by using the same shortcut on any snoozed item.
 
 ### Create Workspaces to group repos
 
@@ -233,50 +303,6 @@ See the following metrics for all repositories in a Cloud Workspace. The default
 gk ws graph
 ```
 
-Open a visual graph of the repo in your current directory in either [GitKraken Client](https://www.gitkraken.com/git-client) or [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) in VS Code.
+Open a visual graph of the repo in your current directory in either [GitKraken Desktop](https://www.gitkraken.com/git-client) or [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) in VS Code.
 
 <img src='/wp-content/uploads/cli-gk-graph.gif' class='img-bordered img-responsive center'>
-
-## Cloud Patches
-
-### What are Cloud Patches and why would you want to use them
-
-A Cloud Patch is a Git patch that GitKraken securely stores for you so it can be easily shared with others across the GitKraken CLI, GitKraken Client, and GitLens. The patch is directly transferred from your machine into secure storage. 
-
-Cloud Patches allow the ability to engage early with your team before a pull request. They can be created as soon as you have a work in progress. This can help with collaborating on changes prior to a pull request and minimize the delay of pull request reviews.
-
-### How to setup Cloud Patches 
-
-Cloud Patches are enabled in the GitKraken CLI by default. 
-
-### How to work with Cloud Patches
-
-To work with Cloud Patches, use `gk patch [command]`. You can run `gk patch` to see all options offered and what they do.
-
-<img src="/wp-content/uploads/gk-cli-gk-patch.png" class="img-bordered img-responsive center">
-
-To create a Cloud Patch, run `gk patch create`. You will be prompted to provide information about the patch and what it should be created from. †You have the following sharing options:
-
-- `Public`: Anyone that you share the public link with will be able to work with the Cloud Patch.
-
-- `Invite Only`: Only users in the GitKraken Organization who have been selected when sharing will be able to work with the Cloud Patch. They will be required to authenticate with a GitKraken account to access it.
-
-- `Private`: Anyone in the GitKraken Organization will be able to work with the Cloud Patch. They will be required to authenticate with a GitKraken account to access it.
-
-Once the process is completed, you will be provided with a link that can be used by yourself or others to open the cloud patch in GitKraken Client or GitLens. From there, the patch can be applied in either client to work with those changes. To apply a Cloud Patch at a later time to the current repository, you can run `gk patch apply`.
-
-<img src="/wp-content/uploads/gk-cli-patch-create-example.gif" class="img-bordered img-responsive center">
-
-Cloud Patches can be viewed from URLs shared to you and they can be applied to your working tree or to a new or existing branch. Simply select or open the link and then follow the prompts within GitLens or GitKraken Client to apply the Cloud Patch.
-
-<img src='/wp-content/uploads/gkc-apply-cloud-patch-example.gif' class='img-bordered img-responsive center'>
-
-Here are some other helpful commands to be used with Cloud Patches:
-
-* `gk patch view` - preview the changes of a Cloud Patch
-* `gk patch list` - list all your Cloud Patches
-* `gk patch delete` - delete a Cloud Patch
-
-### Self-Hosting Cloud Patch data
-
-If you do not want your Cloud Patch data stored on GitKraken Servers, we offer the ability for you to host Cloud Patches on your own AWS S3 storage instance. For more information on configuring this, see our documentation [here](/gk-dev/gk-dev-home/#self-hosted).
