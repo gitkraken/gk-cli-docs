@@ -7,7 +7,7 @@ taxonomy:
 
 ---
 # GitKraken CLI
-Welcome to GitKraken CLI `gk`, a premium CLI experience for managing multiple repositories with familiar GIT CLI commands. Using the new `work` commands it makes working across multiple repos easier, harnesses the power of AI, and provides access to pull requests and issues from multiple services (GitHub, GitLab, Jira).
+Welcome to the GitKraken CLI — an AI-powered, premium developer experience that enhances Git workflows across any repository.
 
 <img src="/wp-content/uploads/gk_cli_setup.png" class="img-responsive center img-bordered">
 
@@ -30,7 +30,7 @@ Check out the [installation instructions](/gitkraken-client/gitkraken-cli/#Insta
 ```
 brew install gitkraken-cli
 ```
-
+#### Downloadable Binary
 Or download it from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest) and add it to your binaries folder:
 
 ```
@@ -38,6 +38,15 @@ mv ~/Downloads/gk /usr/local/bin/gk
 ``` 
 
 ### Unix / Ubuntu
+
+### Snap
+
+`gk` is available on [Snap](https://snapcraft.io/gitkraken-cli) with the following command:
+```
+sudo snap install gitkraken-cli
+```
+
+#### Downloadable Binary
 
 `gk` is available as a downloadable binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest). Once you have it, add it to your binaries folder:
 
@@ -72,8 +81,9 @@ sudo rpm -i ./gk.rpm
 winget install gitkraken.cli
 ```
 
+#### Downloadable Binary
 
-Or download the binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest) and place the `gk.exe` in a desired folder. Then edit your environment variables to add it to your PATH.
+Download the binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest) and place the `gk.exe` in a desired folder. Then edit your environment variables to add it to your PATH.
 
 1. In Search, search for **Environment Variables**.
 2. Click on the **Edit the system environment variables** result.
@@ -81,12 +91,6 @@ Or download the binary from the [releases page](https://github.com/gitkraken/gk-
 4. In the **System Variables** section, scroll until you find the **PATH** variable. Click on it.
     - If it doesn't exist, create a variable with the name **PATH**. 
 5. Add the path to the `gk` binary at the end.
-
-***
-
-## Nerd Fonts
-
-The GitKraken CLI supports Nerd Fonts to display icons for some commands. To ensure correct icon rendering, please obtain and install a Nerd Font available at https://www.nerdfonts.com/. After installation, set the selected Nerd Font as the default font for your terminal.
 
 ***
 
@@ -103,6 +107,10 @@ unalias gk
 ***
 
 ## Get Started with GitKraken CLI
+
+```
+GitKraken CLI does not require login to your GitKraken account, and most features are available immediately. However, to access advanced functionalities such as AI Commit and PR generation, cloud workspace management, and integration syncing, follow the steps below to enable these features.
+```
 
 To unlock the full potential of GitKraken CLI login to your account using the `gk auth login` command. This will open a login in your default browser.
 
@@ -121,6 +129,10 @@ Once logged in and your organization is set, you can synchronize your integratio
 To manually connect to a provider, use: `gk provider add`. 
 
 For a full list of strings please see `gk provider add --help`.
+
+```
+GitKraken CLI currently supports GitHub, GitLab and Jira.
+```
 
 ### Load Your Repositories
 
