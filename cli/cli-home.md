@@ -124,7 +124,7 @@ To match your plan with the correct organization, set your default organization 
 
 ### Synchronize Your Integrations
 
-Once logged in and your organization is set, you can synchronize your integrations from [gitkraken.dev](https://gitkraken.dev/settings/integrations) by running `gk provider list --sync`. 
+Once logged in and your organization is set, you can synchronize your integrations from [gitkraken.dev](https://gitkraken.dev/settings/integrations?source=help_center&product=gitkraken_cli) by running `gk provider list --sync`. 
 
 To manually connect to a provider, use: `gk provider add`. 
 
