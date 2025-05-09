@@ -8,8 +8,6 @@ taxonomy:
 ---
 
 
-## Work Items
-
 ### Managing Work Items with GitKraken CLI
 
 The `work` command suite provides a unified workflow for managing a work item throughout its lifecycle—from task initiation to cleanup. This command helps streamline the process of working on tasks, enhancements, or bug fixes by automating and centralizing actions like branch creation, starting work on code, committing changes, PR management, and more.
