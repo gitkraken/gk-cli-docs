@@ -1,6 +1,6 @@
 ---
 
-title: Gitkraken CLI Support Terms and Conditions
+title: GitKraken CLI Support Terms and Conditions
 description: Learn about Gitkraken CLI Support terms and conditions
 taxonomy:
     category: cli
