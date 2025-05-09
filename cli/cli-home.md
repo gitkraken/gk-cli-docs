@@ -6,7 +6,7 @@ taxonomy:
     category: cli
 
 ---
-# GitKraken CLI
+
 Welcome to the GitKraken CLI — an AI-powered, premium developer experience that enhances Git workflows across any repository.
 
 <img src="/wp-content/uploads/gk_cli_setup.png" class="img-responsive center img-bordered">
