@@ -46,9 +46,7 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
     }
   }
 }
-
 ```
-
 
 #### Windsurf
 
