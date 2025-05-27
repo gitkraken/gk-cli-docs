@@ -37,6 +37,7 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
 * On the pop out window select the **Developer** tab
 * Select **Edit Config** and open the *claude_desktop_config* json file
 * Add the following string to the JSON file
+  
 ```json
 {
   "mcpServers": {
@@ -46,7 +47,9 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
     }
   }
 }
+
 ```
+
 #### Windsurf
 * Locate the `mcp_config.json` file, usually located at `~/.codeium/windsurf/mcp_config.json`
 * Add GitKraken CLI to the JSON with the following string: 
