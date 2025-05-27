@@ -38,7 +38,6 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
 * Select **Edit Config** and open the *claude_desktop_config* json file
 * Add the following string to the JSON file
 ```json
-
 {
   "mcpServers": {
     "gitkraken": {
