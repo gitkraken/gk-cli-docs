@@ -16,7 +16,7 @@ MCP (Model Context Protocol) allows you to connect your GitKraken CLI to your LL
 
 GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. Please see the string below:
 
-```json
+```
 {
   "mcpServers": {
     "gitkraken": {
@@ -25,7 +25,6 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
     }
   }
 }
-
 ```
 ***
 
@@ -38,7 +37,7 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
 * Select **Edit Config** and open the *claude_desktop_config* json file
 * Add the following string to the JSON file
   
-```json
+```
 {
   "mcpServers": {
     "gitkraken": {
@@ -47,7 +46,6 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
     }
   }
 }
-
 ```
 
 #### Windsurf
@@ -63,7 +61,6 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
     }
   }
 }
-
 ```
 
 #### GitHub Copilot
@@ -73,7 +70,7 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
 * In the left panel, expand `Copilot Chat` and click `MCP`
 * In the Json file add the following string
 
-```json
+```
 {
     "servers": {
         "gitkraken": {
@@ -83,7 +80,6 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
         }
     }
 }
-
 ```
 
 
