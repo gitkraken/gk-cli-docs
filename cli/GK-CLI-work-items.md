@@ -45,7 +45,7 @@ gk work info
   <figcaption style="color:#888; text-align:center">Use <code>gk work info</code> to review changes across all repositories.</figcaption>
 </figure>
 
-## Committing Changes with AI
+### Committing Changes with AI
 
 Use AI to generate commit messages and commit changes in parallel:
 
@@ -64,7 +64,7 @@ This command:
   <figcaption style="color:#888; text-align:center">AI-generated commit messages help standardize your commit history.</figcaption>
 </figure>
 
-## Creating a Pull Request with AI
+### Creating a Pull Request with AI
 
 Generate pull requests using:
 
@@ -74,7 +74,7 @@ gk work pr create --ai
 
 This creates pull requests for **all** changes in the current work item with AI-generated messages, streamlining collaboration and review.
 
-## Finalizing a Work Item
+### Finalizing a Work Item
 
 When your work is complete, end the work item with:
 
