@@ -4,7 +4,7 @@ description: Learn how to connect GitKraken CLI with AI agents using MCP.
 taxonomy:
     category: cli
 ---
-<kbd>Last updated: May 2025</kbd>
+<kbd>Last updated: June 2025</kbd>
 
 ### Use MCP (Model Context Protocol) to connect your AI agent to GitKraken CLI
 
@@ -16,12 +16,8 @@ taxonomy:
 
 > To fully control your repositories on a LLM using MCP please  [sync your integrations](https://help.gitkraken.com/cli/cli-home/#synchronize-your-integrations)
 
-<<<<<<< Updated upstream
-GitKraken CLI connects locally with most LLMs by setting an MCP argument. Add the following configuration to your MCP settings:
-=======
-
 GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. Please see the string below:
->>>>>>> Stashed changes
+
 
 ```
 {
@@ -40,20 +36,12 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
 
 #### Claude
 
-<<<<<<< Updated upstream
 1. Open **Settings** from the sidebar or use keyboard shortcuts.
 2. Select the **Developer** tab in the pop-up window.
 3. Click **Edit Config** to open the `claude_desktop_config` JSON file.
 4. Add the following MCP configuration:
 
-```json
-=======
-* Navigate to **Settings** by using the sidebar or keyboard shortcuts
-* On the pop out window select the **Developer** tab
-* Select **Edit Config** and open the *claude_desktop_config* json file
-* Add the following string to the JSON file
-```j
->>>>>>> Stashed changes
+```
 {
   "mcpServers": {
     "gitkraken": {
