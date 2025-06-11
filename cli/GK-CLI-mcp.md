@@ -1,16 +1,14 @@
 ---
-
-title: MCP
-description: Use your MCP connectors with GitKraken CLI. 
+title: MCP (Model Context Protocol)
+description: Learn how to connect GitKraken CLI with AI agents using MCP.
 taxonomy:
     category: cli
-
 ---
+<kbd>Last updated: May 2025</kbd>
 
+### Use MCP (Model Context Protocol) to connect your AI agent to GitKraken CLI
 
-### Use MCP (Model Context Protocol) to connect your AI agent to GitKraken CLI 
-
-MCP (Model Context Protocol) allows you to connect your GitKraken CLI to your LLM (Large Language Model) program. With this enabled you can manage your PRs, Issues, Work Items and more directly from your AI Desktop Agent. 
+**Model Context Protocol (MCP)** allows you to connect your GitKraken CLI to your **Large Language Model (LLM)** program. With this enabled, you can manage your PRs, Issues, Work Items, and more directly from your AI Desktop Agent.
 
 **Please Note: GitKraken CLI is required to use MCP** 
 
@@ -18,7 +16,7 @@ MCP (Model Context Protocol) allows you to connect your GitKraken CLI to your LL
 
 > To fully control your repositories on a LLM using MCP please  [sync your authentications](https://help.gitkraken.com/cli/cli-home/#synchronize-your-integrations)
 
-GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. Please see the string below:
+GitKraken CLI connects locally with most LLMs by setting an MCP argument. Add the following configuration to your MCP settings:
 
 ```json
 {
@@ -29,18 +27,19 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
     }
   }
 }
-
 ```
-***
+
+---
 
 ### Example Integrations
 
 #### Claude
 
-* Navigate to **Settings** by using the sidebar or keyboard shortcuts
-* On the pop out window select the **Developer** tab
-* Select **Edit Config** and open the *claude_desktop_config* json file
-* Add the following string to the JSON file
+1. Open **Settings** from the sidebar or use keyboard shortcuts.
+2. Select the **Developer** tab in the pop-up window.
+3. Click **Edit Config** to open the `claude_desktop_config` JSON file.
+4. Add the following MCP configuration:
+
 ```json
 {
   "mcpServers": {
@@ -54,8 +53,8 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
 
 #### Windsurf
 
-* Locate the `mcp_config.json` file, usually located at `~/.codeium/windsurf/mcp_config.json`
-* Add GitKraken CLI to the JSON with the following string: 
+1. Locate the `mcp_config.json` file. The default path is `~/.codeium/windsurf/mcp_config.json`.
+2. Add the GitKraken CLI entry:
 
 ```json
 {
@@ -66,28 +65,25 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
     }
   }
 }
-
 ```
 
 #### GitHub Copilot
 
-* Click the Copilot Icon
-* On the new menu, select `Edit Preferences`
-* In the left panel, expand `Copilot Chat` and click `MCP`
-* In the Json file add the following string
+1. Click the Copilot icon.
+2. Select **Edit Preferences** from the menu.
+3. In the left panel, expand **Copilot Chat** and click **MCP**.
+4. Add the following to the JSON configuration file:
 
 ```json
 {
-    "servers": {
-        "gitkraken": {
-            "type": "stdio",
-            "command": "gk",
-            "args": ["mcp"]
-        }
+  "servers": {
+    "gitkraken": {
+      "type": "stdio",
+      "command": "gk",
+      "args": ["mcp"]
     }
+  }
 }
-
 ```
-
 
 
