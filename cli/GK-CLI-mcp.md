@@ -14,7 +14,7 @@ taxonomy:
 
 ### MCP Setup
 
-> To fully control your repositories on a LLM using MCP please  [sync your authentications](https://help.gitkraken.com/cli/cli-home/#synchronize-your-integrations)
+> To fully control your repositories on a LLM using MCP please  [sync your integrations](https://help.gitkraken.com/cli/cli-home/#synchronize-your-integrations)
 
 <<<<<<< Updated upstream
 GitKraken CLI connects locally with most LLMs by setting an MCP argument. Add the following configuration to your MCP settings:
