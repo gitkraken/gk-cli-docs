@@ -10,7 +10,11 @@ taxonomy:
 
 **Model Context Protocol (MCP)** allows you to connect your GitKraken CLI to your **Large Language Model (LLM)** program. With this enabled, you can manage your PRs, Issues, Work Items, and more directly from your AI Desktop Agent.
 
+**Please Note: GitKraken CLI is required to use MCP** 
+
 ### MCP Setup
+
+> To fully control your repositories on a LLM using MCP please  [sync your authentications](https://help.gitkraken.com/cli/cli-home/#synchronize-your-integrations)
 
 GitKraken CLI connects locally with most LLMs by setting an MCP argument. Add the following configuration to your MCP settings:
 
