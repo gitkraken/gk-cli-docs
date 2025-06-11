@@ -16,9 +16,14 @@ taxonomy:
 
 > To fully control your repositories on a LLM using MCP please  [sync your authentications](https://help.gitkraken.com/cli/cli-home/#synchronize-your-integrations)
 
+<<<<<<< Updated upstream
 GitKraken CLI connects locally with most LLMs by setting an MCP argument. Add the following configuration to your MCP settings:
+=======
 
-```json
+GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. Please see the string below:
+>>>>>>> Stashed changes
+
+```
 {
   "mcpServers": {
     "gitkraken": {
@@ -35,12 +40,20 @@ GitKraken CLI connects locally with most LLMs by setting an MCP argument. Add th
 
 #### Claude
 
+<<<<<<< Updated upstream
 1. Open **Settings** from the sidebar or use keyboard shortcuts.
 2. Select the **Developer** tab in the pop-up window.
 3. Click **Edit Config** to open the `claude_desktop_config` JSON file.
 4. Add the following MCP configuration:
 
 ```json
+=======
+* Navigate to **Settings** by using the sidebar or keyboard shortcuts
+* On the pop out window select the **Developer** tab
+* Select **Edit Config** and open the *claude_desktop_config* json file
+* Add the following string to the JSON file
+```j
+>>>>>>> Stashed changes
 {
   "mcpServers": {
     "gitkraken": {
@@ -56,7 +69,7 @@ GitKraken CLI connects locally with most LLMs by setting an MCP argument. Add th
 1. Locate the `mcp_config.json` file. The default path is `~/.codeium/windsurf/mcp_config.json`.
 2. Add the GitKraken CLI entry:
 
-```json
+```
 {
   "mcpServers": {
     "gitkraken": {
@@ -74,7 +87,7 @@ GitKraken CLI connects locally with most LLMs by setting an MCP argument. Add th
 3. In the left panel, expand **Copilot Chat** and click **MCP**.
 4. Add the following to the JSON configuration file:
 
-```json
+```
 {
   "servers": {
     "gitkraken": {
