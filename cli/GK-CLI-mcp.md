@@ -19,9 +19,21 @@ taxonomy:
 
 Please see our [MCP blog post](https://www.gitkraken.com/blog/introducing-gitkraken-mcp) with example workflows that can be enabled with this powerful tool. 
 
----
 
-### MCP Setup
+
+## MCP Setup
+
+### Install Command 
+
+GitKraken CLI allows you easily install MCP on various tools with `gk mcp install`. 
+
+In this example we are installing GitKraken MCP to Claude using `gk mcp install claude`
+
+<img src="/wp-content/uploads/gkcli_mcp_install.png" class="img-responsive center img-bordered">
+
+To install on your tool of choice use `gk mcp install <PLATFORM>` or `gk mcp install <PLATFORM> -file-path` if your LLM is in a non default path.
+
+### Self Installation 
 
 GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. Please see the string below:
 
@@ -37,11 +49,10 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
 }
 ```
 
----
 
-### Example Integrations
+#### Example Integrations
 
-#### Claude
+###### Claude
 
 1. Open **Settings** from the sidebar or use keyboard shortcuts.
 2. Select the **Developer** tab in the pop-up window.
@@ -59,7 +70,7 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
 }
 ```
 
-#### Windsurf
+##### Windsurf
 
 1. Locate the `mcp_config.json` file. The default path is `~/.codeium/windsurf/mcp_config.json`.
 2. Add the GitKraken CLI entry:
@@ -75,7 +86,7 @@ GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. P
 }
 ```
 
-#### GitHub Copilot
+##### GitHub Copilot
 
 1. Click the Copilot icon.
 2. Select **Edit Preferences** from the menu.
