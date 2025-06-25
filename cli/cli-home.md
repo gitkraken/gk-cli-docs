@@ -9,7 +9,7 @@ Welcome to the GitKraken CLI — an AI-powered, premium developer experience tha
 
 <figure>
   <img src="/wp-content/uploads/gk_cli_setup_new.png" class="img-responsive center img-bordered" alt="Screenshot of the GitKraken CLI setup screen">
-  <figcaption style="color:#888; text-align:center">Beep boop bop.</figcaption>
+  <figcaption style="color:#888; text-align:center">GitKraken CLI Setup.</figcaption>
 </figure>
 
 GitKraken CLI is available on macOS, Windows, and Unix systems.
@@ -18,7 +18,7 @@ GitKraken CLI is available on macOS, Windows, and Unix systems.
 
 ## Documentation
 
-Check out the [installation instructions](/gitkraken-client/gitkraken-cli/#Installation) and [examples](/gitkraken-client/gitkraken-cli/#Examples) below. To view full command references, [see the GitKraken CLI documentation](https://gitkraken.github.io/gk-cli/docs/gk.html).
+Check out the [installation instructions](/gitkraken-client/gitkraken-cli/#Installation) and [examples](/gitkraken-client/gitkraken-cli/#Examples) below. To view full command references, [see the GitKraken CLI command list](https://gitkraken.github.io/gk-cli/docs/gk.html).
 
 ***
 
@@ -108,13 +108,15 @@ unalias gk
 
 ## Get Started with GitKraken CLI
 
-GitKraken CLI works out of the box without requiring login. For advanced features such as AI commit and PR generation, cloud workspace support, and integration sync, log in to your GitKraken account:
+GitKraken CLI works seamlessly right out of the box—no login required to get started. To unlock the full potential of your workflow with features like AI-powered commit and PR generation, cloud workspace support, MCP integration, and sync capabilities, simply login to your GitKraken account:
 
 ```
 gk auth login
 ```
 
-This command opens your default browser to complete authentication.
+This command opens your default browser to complete authentication. 
+
+If no default browser is set on your device, the URL will appear in your terminal. Copy this URL and open it in any browser, then enter the code provided by [gk.dev](gitkraken.dev) to complete the login process.
 
 ### Set Your GitKraken Organization
 
