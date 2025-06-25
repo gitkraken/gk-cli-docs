@@ -8,7 +8,7 @@ taxonomy:
 Welcome to the GitKraken CLI — an AI-powered, premium developer experience that enhances Git workflows across any repository.
 
 <figure>
-  <img src="/wp-content/uploads/gk_cli_setup.png" class="img-responsive center img-bordered" alt="Screenshot of the GitKraken CLI setup screen">
+  <img src="/wp-content/uploads/gk_cli_setup_new.png" class="img-responsive center img-bordered" alt="Screenshot of the GitKraken CLI setup screen">
   <figcaption style="color:#888; text-align:center">Beep boop bop.</figcaption>
 </figure>
 
@@ -131,7 +131,7 @@ gk organization set <ORG_NAME>
 ```
 
 <figure>
-  <img src="/wp-content/uploads/gk-cli-org-ls.png" class="img-bordered img-responsive center" alt="Organization list view in GitKraken CLI">
+  <img src="/wp-content/uploads/gk-cli-org-ls-new.png" class="img-bordered img-responsive center" alt="Organization list view in GitKraken CLI">
   <figcaption style="color:#888; text-align:center">Use <code>gk organization list</code> to confirm and set the correct GitKraken Organization.</figcaption>
 </figure>
 
@@ -151,7 +151,7 @@ gk provider add
 
 See `gk provider add --help` for available options.
 
-Supported integrations include GitHub, GitLab, and Jira.
+Supported integrations include GitHub, GitLab, BitBucket and Jira.
 
 ### Load Your Repositories
 
@@ -171,7 +171,7 @@ To work within a GitKraken workspace:
    ```
 
 <figure>
-  <img src="/wp-content/uploads/gk-cli-ws-set.png" class="img-bordered img-responsive center" alt="Setting a GitKraken workspace via CLI">
+  <img src="/wp-content/uploads/gk-cli-ws-set-new.png" class="img-bordered img-responsive center" alt="Setting a GitKraken workspace via CLI">
   <figcaption style="color:#888; text-align:center">Switching and cloning repositories within GitKraken CLI workspaces.</figcaption>
 </figure>
 
