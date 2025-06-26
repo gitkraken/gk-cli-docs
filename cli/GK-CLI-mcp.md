@@ -33,6 +33,14 @@ In this example we are installing GitKraken MCP to Claude using `gk mcp install 
 
 To install on your tool of choice use `gk mcp install <PLATFORM>` or `gk mcp install <PLATFORM> -file-path` if your LLM is in a non default path.
 
+The following LLMs are supported: 
+
+- Claude Desktop
+- Windsurf
+- Cursor
+- VS Code
+- Zed
+
 ### Self Installation 
 
 GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. Please see the string below:
