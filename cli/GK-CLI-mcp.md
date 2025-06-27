@@ -38,7 +38,6 @@ Supported LLM applications:
 - Claude
 - Windsurf
 - Cursor
-- VSCode
 - Zed
 
 ### Self Installation 
