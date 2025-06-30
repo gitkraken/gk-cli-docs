@@ -23,6 +23,26 @@ Please see our [MCP blog post](https://www.gitkraken.com/blog/introducing-gitkra
 
 ## MCP Setup
 
+### Install Command 
+
+GitKraken CLI allows you easily install MCP on various tools with `gk mcp install`. 
+
+In this example we are installing GitKraken MCP to Claude using `gk mcp install claude`
+
+<img src="/wp-content/uploads/gkcli_mcp_install.png" class="img-responsive center img-bordered">
+
+To install MCP for your preferred tool, use the command `gk mcp install <PLATFORM>`. If you've installed your LLM application in a non-default location, include the `-file-path` argument: `gk mcp install <PLATFORM> -file-path`.
+
+Supported LLM applications:
+
+- Claude
+- Windsurf
+- Cursor
+- Zed
+- VSCode
+
+To uninstall at anytime please use `gk mcp uninstall <PLATFORM>`
+
 ### Self Installation 
 
 GitKraken CLI will connect locally with most LLMs by setting an MCP arguement. Please see the string below:
