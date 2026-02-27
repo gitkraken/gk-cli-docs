@@ -7,6 +7,8 @@ taxonomy:
 
 ---
 
+<kbd>Last updated: February 2026</kbd>
+
 Below is a chart outlining some basic security information regarding the type of data that we collect and how we store it.
 
 | Service | What information are we collecting | How is this information secured in the transfer| Where is this information stored | How is this information secured in storage |

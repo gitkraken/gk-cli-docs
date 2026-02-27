@@ -7,6 +7,7 @@ taxonomy:
 
 ---
 
+<kbd>Last updated: February 2026</kbd>
 
 Our goal is to ensure you can use GitKraken CLI effortlessly and with minimal friction. In the unlikely event that you need to reach out to a human, refer to our current Terms and Conditions below.
 

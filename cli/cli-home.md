@@ -5,9 +5,11 @@ taxonomy:
     category: cli
 ---
 
+<kbd>Last updated: February 2026</kbd>
+
 Welcome to the GitKraken CLI — an AI-powered, premium developer experience that enhances Git workflows across any repository.
 
-<figure>
+<figure style="text-align: center">
   <img src="/wp-content/uploads/gk_cli_setup_new.png" class="img-responsive center img-bordered" alt="Screenshot of the GitKraken CLI setup screen">
   <figcaption style="color:#888; text-align:center">GitKraken CLI Setup.</figcaption>
 </figure>
@@ -132,7 +134,7 @@ Set your organization (required for AI features):
 gk organization set <ORG_NAME>
 ```
 
-<figure>
+<figure style="text-align: center">
   <img src="/wp-content/uploads/gk-cli-org-ls-new.png" class="img-bordered img-responsive center" alt="Organization list view in GitKraken CLI">
   <figcaption style="color:#888; text-align:center">Use <code>gk organization list</code> to confirm and set the correct GitKraken Organization.</figcaption>
 </figure>
@@ -172,7 +174,7 @@ To work within a GitKraken workspace:
    gk ws clone <name> <root-path>
    ```
 
-<figure>
+<figure style="text-align: center">
   <img src="/wp-content/uploads/gk-cli-ws-set-new.png" class="img-bordered img-responsive center" alt="Setting a GitKraken workspace via CLI">
   <figcaption style="color:#888; text-align:center">Switching and cloning repositories within GitKraken CLI workspaces.</figcaption>
 </figure>

@@ -5,7 +5,7 @@ taxonomy:
     category: cli
 ---
 
-<kbd>Last updated: May 2025</kbd> 
+<kbd>Last updated: February 2026</kbd> 
 
 ## Managing Work Items with GitKraken CLI
 
@@ -29,7 +29,7 @@ gk work start <name>
 
 The `<name>` assigns a title to your work item. This initializes all repositories in your workspace and checks for any **pending commits, pull requests, or open work items.**
 
-<figure>
+<figure style="text-align: center">
   <img src="/wp-content/uploads/gk-cli-work.png" class="img-bordered img-responsive center" alt="Work item initialization in GitKraken CLI">
   <figcaption style="color:#888; text-align:center">Creating a work item initializes your workspace and checks for pending items.</figcaption>
 </figure>
@@ -40,7 +40,7 @@ To view pending changes:
 gk work info
 ```
 
-<figure>
+<figure style="text-align: center">
   <img src="/wp-content/uploads/gk-cli-w-info.png" class="img-bordered img-responsive center" alt="Work info output in GitKraken CLI">
   <figcaption style="color:#888; text-align:center">Use <code>gk work info</code> to review changes across all repositories.</figcaption>
 </figure>
@@ -59,7 +59,7 @@ This command:
 * Generates context-aware commit messages.
 * Commits changes across all repositories in the work item.
 
-<figure>
+<figure style="text-align: center">
   <img src="/wp-content/uploads/gk-cli-w-commit.png" class="img-bordered img-responsive center" alt="AI-generated commit in GitKraken CLI">
   <figcaption style="color:#888; text-align:center">AI-generated commit messages help standardize your commit history.</figcaption>
 </figure>
