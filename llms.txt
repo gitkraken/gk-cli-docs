@@ -1,0 +1,15 @@
+# GitKraken CLI
+
+> GitKraken CLI (`gk`) is an AI-powered, premium developer experience that enhances Git workflows across any repository. Available on macOS, Windows, and Linux.
+
+## Documentation
+
+- [Getting Started & Installation](https://help.gitkraken.com/cli/cli-home/): Installation via Homebrew, Snap, Winget, or binary; authentication with `gk auth login`; organization and workspace setup; provider integrations (GitHub, GitLab, Bitbucket, Jira).
+- [Work Items](https://help.gitkraken.com/cli/GK-CLI-work-items/): Manage work items across multiple repositories with `gk work`. Supports AI-generated commit messages (`gk work commit --ai`), AI-generated pull requests (`gk work pr create --ai`), and parallel execution across repos.
+- [Security Information](https://help.gitkraken.com/cli/CLI-Security/): Data security details covering what information is collected per service (Workspaces, Teams, Launchpad, Cloud Patches) and how it is encrypted in transit (TLS) and at rest (AES-256).
+- [Support Terms and Conditions](https://help.gitkraken.com/cli/CLI-terms-and-conditions/): Support plans, response times (Pro through Enterprise), end-of-life policy, and links to the EULA and Privacy Policy.
+
+## Optional
+
+- [Full CLI Command Reference](https://gitkraken.github.io/gk-cli/docs/gk.html): Complete reference for all `gk` CLI commands.
+- [GitHub Releases](https://github.com/gitkraken/gk-cli/releases/latest): Latest binaries and release notes for all platforms.

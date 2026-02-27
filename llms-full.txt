@@ -1,0 +1,228 @@
+# GitKraken CLI — Full Documentation
+
+> GitKraken CLI (`gk`) is an AI-powered, premium developer experience that enhances Git workflows across any repository. Available on macOS, Windows, and Linux.
+
+Source: https://help.gitkraken.com/cli/cli-home/
+Full command reference: https://gitkraken.github.io/gk-cli/docs/gk.html
+
+---
+
+## Getting Started & Installation
+
+GitKraken CLI is available on macOS, Windows, and Unix systems.
+
+### macOS
+
+Install `gk` using Homebrew:
+
+```
+brew install gitkraken-cli
+```
+
+Or download a binary from the releases page and move it to your PATH:
+
+```
+mv ~/Downloads/gk /usr/local/bin/gk
+```
+
+### Unix / Ubuntu
+
+Install via Snap:
+
+```
+sudo snap install gitkraken-cli
+```
+
+Or from the releases page:
+
+```
+mv ~/Downloads/gk /usr/local/bin/gk
+```
+
+Install `.deb` or `.rpm` packages:
+
+```
+sudo apt install ./gk.deb
+```
+
+or
+
+```
+sudo rpm -i ./gk.rpm
+```
+
+### Windows
+
+Install via Winget:
+
+```
+winget install gitkraken.cli
+```
+
+Or download `gk.exe` from the releases page, move it to your chosen directory, and add it to your system PATH via Environment Variables.
+
+### Troubleshooting
+
+Oh-My-Zsh may alias `gitk` as `gk`. To remove the alias:
+
+```
+unalias gk
+```
+
+---
+
+## Authentication & Setup
+
+GitKraken CLI works out of the box without login. To unlock AI-powered features, cloud workspaces, MCP integration, and sync capabilities, log in:
+
+```
+gk auth login
+```
+
+This opens your default browser to complete authentication. If no browser is set, a URL will appear in the terminal — open it manually and enter the code from gk.dev.
+
+### Set Your GitKraken Organization
+
+List your organizations:
+
+```
+gk organization list
+```
+
+Set your active organization (required for AI features):
+
+```
+gk organization set <ORG_NAME>
+```
+
+### Synchronize Integrations
+
+Once authenticated and your organization is set, sync integrations:
+
+```
+gk provider list --sync
+```
+
+To add a provider manually:
+
+```
+gk provider add
+```
+
+Supported integrations include GitHub, GitLab, Bitbucket, and Jira.
+
+### Load Your Repositories
+
+1. List available workspaces:
+   ```
+   gk workspace list
+   ```
+2. Set your desired workspace:
+   ```
+   gk workspace set <NAME>
+   ```
+3. Clone a repository into the workspace:
+   ```
+   gk ws clone <name> <root-path>
+   ```
+
+---
+
+## Work Items
+
+Source: https://help.gitkraken.com/cli/GK-CLI-work-items/
+
+The `gk work` command suite provides a unified workflow for managing a work item throughout its lifecycle — from task initiation to cleanup. It automates branch creation, committing, pull request creation, and workspace cleanup across multiple repositories in parallel.
+
+### Start a Work Item
+
+```
+gk work start <name>
+```
+
+The `<name>` assigns a title to the work item. This initializes all repositories in your workspace and checks for any pending commits, pull requests, or open work items.
+
+### View Pending Changes
+
+```
+gk work info
+```
+
+### Commit Changes with AI
+
+```
+gk work commit --ai
+```
+
+This command:
+- Analyzes staged changes using AI.
+- Generates context-aware commit messages.
+- Commits changes across all repositories in the work item.
+
+### Create a Pull Request with AI
+
+```
+gk work pr create --ai
+```
+
+Creates pull requests for all changes in the current work item with AI-generated messages.
+
+### Finalize a Work Item
+
+```
+gk work end
+```
+
+Cleans up the workspace and provides options to delete or retain local changes.
+
+---
+
+## Security Information
+
+Source: https://help.gitkraken.com/cli/CLI-Security/
+
+| Service | What information is collected | Transfer security | Storage location | Storage security |
+| --- | --- | --- | --- | --- |
+| Workspaces/Insights | Repo metadata, issues/PRs | TLS | MongoDB Atlas | AES-256 at rest |
+| Teams & Users | Repo-relative file paths, lines changed, branch name, first commit SHA | TLS | MongoDB Atlas | AES-256 at rest |
+| Subscriptions | Billing info: last four digits, name, payment type, zip, country, card type | TLS | MongoDB Atlas | AES-256 at rest |
+| Launchpad | Issue/PR/URL metadata | TLS | Postgres (RDS) | AES-256 at rest |
+| Cloud Patches | Patch metadata (repo name/URL/provider/base branch) + patch content | TLS | Patch info in Postgres; content in AWS S3 | SSE-S3 (AES-256) |
+
+---
+
+## Support Terms and Conditions
+
+Source: https://help.gitkraken.com/cli/CLI-terms-and-conditions/
+
+Support requests should be submitted at: https://help.gitkraken.com/cli/cli-contact-support/
+
+### Support Plans and Response Times
+
+| Plan | Response Time |
+| --- | --- |
+| Pro | 3 Business Days |
+| Advanced | 1 Business Day |
+| Business | 12 Hours |
+| Enterprise | 6 Hours |
+
+Support Hours: 10:00 am to 10:00 pm, Monday to Friday, UTC.
+
+Student and Community plan users are encouraged to use self-service resources and the GitKraken community.
+
+### Support Period
+
+GitKraken supports Generally Available (GA) releases. Fixes are provided via new releases on top of the latest major/minor branch. Versioning follows X.Y.Z — X is major, Y is minor, Z is patch. Customers are expected to stay on the current release for optimal support.
+
+### End-of-Life Policy
+
+Major releases are supported for at least 12 months from the major release date. GitKraken provides at least 60 days' prior notice before discontinuing any product or feature. After the End of Life period, support obligations end.
+
+EoL guidelines:
+- Advance notice of at least 60 days for major features or products.
+- Viable alternatives provided when retiring functionality.
+- Continued support until the retirement date.
+
+GitKraken may accelerate EoL timelines for security or platform integrity reasons. Third-party integrations may also be retired due to third-party decisions.
+
+See also: https://www.gitkraken.com/eula | https://www.gitkraken.com/privacy
