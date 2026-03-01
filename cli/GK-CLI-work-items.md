@@ -13,6 +13,35 @@ The `gk work` command suite provides a unified workflow for managing a work item
 
 With the power of AI, `gk work` also enables automatic generation of commit messages and pull requests without leaving the terminal.
 
+***
+
+## Quick Start
+
+To manage a work item across multiple repositories using GitKraken CLI:
+
+1. Start a new work item:
+   ```
+   gk work start <name>
+   ```
+2. Review pending changes across all repositories in the workspace:
+   ```
+   gk work info
+   ```
+3. Stage your changes, then commit with an AI-generated message:
+   ```
+   gk work commit --ai
+   ```
+4. Create pull requests for all repositories in the work item:
+   ```
+   gk work pr create --ai
+   ```
+5. Finalize and clean up the work item:
+   ```
+   gk work end
+   ```
+
+All `gk work` commands execute in parallel across every repository in the active workspace. An authenticated GitKraken account with a configured organization is required to use AI-generated commit messages and pull requests.
+
 ## Boost Efficiency with Parallel Execution
 
 Execute commands across multiple repositories in parallel to complete tasks faster and more efficiently.
