@@ -18,6 +18,34 @@ GitKraken CLI is available on macOS, Windows, and Unix systems.
 
 ***
 
+## Quick Start
+
+To install and configure GitKraken CLI on macOS, Windows, or Linux:
+
+1. Install `gk` using your platform's package manager (Homebrew, Winget, or Snap) or download a binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest).
+2. Authenticate with your GitKraken account to enable cloud features:
+   ```
+   gk auth login
+   ```
+3. Confirm and set your organization (required to enable AI features):
+   ```
+   gk organization list
+   gk organization set <ORG_NAME>
+   ```
+4. Sync your provider integrations (GitHub, GitLab, Bitbucket, Jira):
+   ```
+   gk provider list --sync
+   ```
+5. Set a workspace and clone repositories into it:
+   ```
+   gk workspace set <NAME>
+   gk ws clone <name> <root-path>
+   ```
+
+An authenticated session and configured organization are required for AI-powered features including commit message generation and pull request creation.
+
+***
+
 ## Documentation
 
 Check out the [installation instructions](/gitkraken-client/gitkraken-cli/#Installation) and [examples](/gitkraken-client/gitkraken-cli/#Examples) below. To view full command references, [see the GitKraken CLI command list](https://gitkraken.github.io/gk-cli/docs/gk.html).
