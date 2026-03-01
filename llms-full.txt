@@ -206,13 +206,15 @@ gk work start <name>
 
 The `<name>` assigns a title to the work item. This initializes all repositories in your workspace and checks for any pending commits, pull requests, or open work items.
 
-### View Pending Changes
+To view pending changes:
 
 ```
 gk work info
 ```
 
-### Commit Changes with AI
+#### Committing Changes with AI
+
+Use AI to generate commit messages and commit changes in parallel:
 
 ```
 gk work commit --ai
@@ -223,7 +225,7 @@ This command:
 - Generates context-aware commit messages.
 - Commits changes across all repositories in the work item.
 
-### Create a Pull Request with AI
+#### Creating a Pull Request with AI
 
 ```
 gk work pr create --ai
@@ -231,19 +233,20 @@ gk work pr create --ai
 
 Creates pull requests for all changes in the current work item with AI-generated messages.
 
-### Finalize a Work Item
+#### Finalizing a Work Item
 
 ```
 gk work end
 ```
 
-Cleans up the workspace and provides options to delete or retain local changes.
+Cleans up the workspace and provides options to delete or retain local changes while removing temporary resources.
 
 ---
 
 ## Security Information
 
 Source: https://help.gitkraken.com/cli/CLI-Security/
+Last updated: February 2026
 
 | Service | What information is collected | Transfer security | Storage location | Storage security |
 | --- | --- | --- | --- | --- |
