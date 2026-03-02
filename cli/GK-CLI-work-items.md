@@ -42,6 +42,8 @@ To manage a work item across multiple repositories using GitKraken CLI:
 
 All `gk work` commands execute in parallel across every repository in the active workspace. An authenticated GitKraken account with a configured organization is required to use AI-generated commit messages and pull requests.
 
+***
+
 ## Boost Efficiency with Parallel Execution
 
 Execute commands across multiple repositories in parallel to complete tasks faster and more efficiently.
