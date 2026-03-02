@@ -5,11 +5,39 @@
 Source: https://help.gitkraken.com/cli/cli-home/
 Full command reference: https://gitkraken.github.io/gk-cli/docs/gk.html
 
+Last updated: February 2026
+
 ---
 
 ## Getting Started & Installation
 
 GitKraken CLI is available on macOS, Windows, and Unix systems.
+
+### Quick Start
+
+To install and configure GitKraken CLI on macOS, Windows, or Linux:
+
+1. Install `gk` using your platform's package manager (Homebrew, Winget, or Snap) or download a binary from the releases page.
+2. Authenticate with your GitKraken account to enable cloud features:
+   ```
+   gk auth login
+   ```
+3. Confirm and set your organization (required to enable AI features):
+   ```
+   gk organization list
+   gk organization set <ORG_NAME>
+   ```
+4. Sync your provider integrations (GitHub, GitLab, Bitbucket, Jira):
+   ```
+   gk provider list --sync
+   ```
+5. Set a workspace and clone repositories into it:
+   ```
+   gk workspace set <NAME>
+   gk ws clone <name> <root-path>
+   ```
+
+An authenticated session and configured organization are required for AI-powered features including commit message generation and pull request creation.
 
 ### macOS
 
@@ -131,10 +159,46 @@ Supported integrations include GitHub, GitLab, Bitbucket, and Jira.
 ## Work Items
 
 Source: https://help.gitkraken.com/cli/GK-CLI-work-items/
+Last updated: February 2026
 
 The `gk work` command suite provides a unified workflow for managing a work item throughout its lifecycle — from task initiation to cleanup. It automates branch creation, committing, pull request creation, and workspace cleanup across multiple repositories in parallel.
 
-### Start a Work Item
+With the power of AI, `gk work` also enables automatic generation of commit messages and pull requests without leaving the terminal.
+
+### Quick Start
+
+To manage a work item across multiple repositories using GitKraken CLI:
+
+1. Start a new work item:
+   ```
+   gk work start <name>
+   ```
+2. Review pending changes across all repositories in the workspace:
+   ```
+   gk work info
+   ```
+3. Stage your changes, then commit with an AI-generated message:
+   ```
+   gk work commit --ai
+   ```
+4. Create pull requests for all repositories in the work item:
+   ```
+   gk work pr create --ai
+   ```
+5. Finalize and clean up the work item:
+   ```
+   gk work end
+   ```
+
+All `gk work` commands execute in parallel across every repository in the active workspace. An authenticated GitKraken account with a configured organization is required to use AI-generated commit messages and pull requests.
+
+### Boost Efficiency with Parallel Execution
+
+Execute commands across multiple repositories in parallel to complete tasks faster and more efficiently.
+
+### Example Workflow
+
+To create a work item:
 
 ```
 gk work start <name>
@@ -142,13 +206,15 @@ gk work start <name>
 
 The `<name>` assigns a title to the work item. This initializes all repositories in your workspace and checks for any pending commits, pull requests, or open work items.
 
-### View Pending Changes
+To view pending changes:
 
 ```
 gk work info
 ```
 
-### Commit Changes with AI
+#### Committing Changes with AI
+
+Use AI to generate commit messages and commit changes in parallel:
 
 ```
 gk work commit --ai
@@ -159,7 +225,7 @@ This command:
 - Generates context-aware commit messages.
 - Commits changes across all repositories in the work item.
 
-### Create a Pull Request with AI
+#### Creating a Pull Request with AI
 
 ```
 gk work pr create --ai
@@ -167,19 +233,20 @@ gk work pr create --ai
 
 Creates pull requests for all changes in the current work item with AI-generated messages.
 
-### Finalize a Work Item
+#### Finalizing a Work Item
 
 ```
 gk work end
 ```
 
-Cleans up the workspace and provides options to delete or retain local changes.
+Cleans up the workspace and provides options to delete or retain local changes while removing temporary resources.
 
 ---
 
 ## Security Information
 
 Source: https://help.gitkraken.com/cli/CLI-Security/
+Last updated: February 2026
 
 | Service | What information is collected | Transfer security | Storage location | Storage security |
 | --- | --- | --- | --- | --- |
