@@ -5,7 +5,7 @@ taxonomy:
     category: cli
 ---
 
-<kbd>Last updated: February 2026</kbd> 
+<kbd>Last updated: March 2026</kbd> 
 
 ## Managing Work Items with GitKraken CLI
 

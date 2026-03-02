@@ -5,7 +5,7 @@ taxonomy:
     category: cli
 ---
 
-<kbd>Last updated: February 2026</kbd>
+<kbd>Last updated: March 2026</kbd>
 
 Welcome to the GitKraken CLI — an AI-powered, premium developer experience that enhances Git workflows across any repository.
 
