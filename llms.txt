@@ -4,7 +4,7 @@
 
 ## Documentation
 
-- [How to Install and Set Up GitKraken CLI](https://help.gitkraken.com/cli/cli-home/): Install via Homebrew, Snap, Winget, or binary; authenticate with `gk auth login`; set an organization; sync providers; and load repositories into a workspace. Basic setup is available on all plans; AI-powered features require a paid plan.
+- [How to Install and Set Up GitKraken CLI](https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli): Install via Homebrew, Snap, Winget, or binary, then continue to the setup section at `#how-to-start-using-gitkraken-cli-after-installation` to authenticate with `gk auth login`, set an organization, sync providers, and load repositories into a workspace. Basic setup is available on all plans; AI-powered features require a paid plan.
 - [How to Manage Work Items in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-work-items/): Manage multi-repository work with `gk work`. Work Items are available on all plans; AI-assisted actions such as `gk work commit --ai` and `gk work pr create --ai` require authentication, an active organization, and a paid plan.
 - [GitKraken CLI Support Terms, Response Times, and Lifecycle Policy](https://help.gitkraken.com/cli/CLI-terms-and-conditions/): Support response times for Community, Pro, Advanced, Business, and Enterprise; support hours; GA release support; end-of-life policy; and links to the EULA and Privacy Policy.
 

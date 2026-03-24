@@ -4,6 +4,8 @@
 
 Source: https://help.gitkraken.com/cli/cli-home/
 Full command reference: https://gitkraken.github.io/gk-cli/docs/gk.html
+Install section: https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli
+Setup section: https://help.gitkraken.com/cli/cli-home/#how-to-start-using-gitkraken-cli-after-installation
 
 Last updated: March 2026
 
