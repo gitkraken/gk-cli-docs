@@ -1,6 +1,6 @@
 ---
 
-title: GitKraken CLI Support Terms, Response Times, and Lifecycle Policy
+title: GitKraken CLI Support Terms and Conditions
 description: Learn how to contact GitKraken CLI support, which plans include guaranteed response times, and how release support and end-of-life are handled.
 product: "GitKraken CLI"
 feature: "Support Terms and Conditions"
