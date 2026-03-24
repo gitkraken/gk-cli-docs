@@ -71,7 +71,7 @@ An authenticated session, configured organization, and paid plan are required fo
 
 ## Where to Find GitKraken CLI Documentation
 
-Check out the [installation instructions](/gitkraken-client/gitkraken-cli/#Installation) and [examples](/gitkraken-client/gitkraken-cli/#Examples) below. To view full command references, [see the GitKraken CLI command list](https://gitkraken.github.io/gk-cli/docs/gk.html).
+Check out the [installation instructions](https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli) and [examples](https://help.gitkraken.com/cli/cli-home/#how-to-start-using-gitkraken-cli-after-installation) below. To view full command references, [see the GitKraken CLI command list](https://gitkraken.github.io/gk-cli/docs/gk.html).
 
 ***
 
