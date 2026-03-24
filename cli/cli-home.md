@@ -189,7 +189,7 @@ gk organization set <ORG_NAME>
 
 <figure style="text-align: center">
   <img src="/wp-content/uploads/gk-cli-org-ls-new.png" class="img-bordered img-responsive center" alt="Organization list view in GitKraken CLI">
-  <figcaption style="color:#888; text-align:center">Use <code>gk organization list</code> to confirm and set the correct GitKraken Organization.</figcaption>
+  <figcaption style="color:#888; text-align:center">Use gk organization list to confirm and set the correct GitKraken Organization.</figcaption>
 </figure>
 
 ### How to Sync Your Git Provider and Jira Integrations
