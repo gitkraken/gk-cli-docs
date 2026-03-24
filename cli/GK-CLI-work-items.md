@@ -1,23 +1,44 @@
 ---
-title: Work Items
-description: Learn how to take action on multiple repos at once with Work Items.
+title: How to Manage Work Items in GitKraken CLI
+description: Start, review, commit, create pull requests for, and clean up a GitKraken CLI Work Item across multiple repositories in one workspace.
+product: "GitKraken CLI"
+feature: "Work Items"
+content_type: "how-to"
+audience: "all"
+plan_required: "all"
+status: "GA"
+last_verified: "2026-03"
 taxonomy:
     category: cli
 ---
 
 <kbd>Last updated: March 2026</kbd> 
 
-## Managing Work Items with GitKraken CLI
+## How to Manage Work Items with GitKraken CLI
 
-The `gk work` command suite provides a unified workflow for managing a work item throughout its lifecycle—from task initiation to cleanup. This command streamlines development tasks, enhancements, and bug fixes by automating actions like branch creation, committing changes, pull request creation, and workspace cleanup.
+GitKraken CLI Work Items let developers and agents start, review, commit, create pull requests for, and clean up a task across every repository in the active workspace. Use this workflow when one issue affects multiple repositories; AI-generated commits and pull requests require authentication, a configured organization, and a paid plan.
 
-With the power of AI, `gk work` also enables automatic generation of commit messages and pull requests without leaving the terminal.
+## Requirements
+
+- Workspace: an active GitKraken workspace with the target repositories
+- Plan support: Work Items can be used on all plans, but AI-assisted actions require a paid plan
+- Authentication: `gk auth login` is required for GitKraken cloud features
+- Organization: `gk organization set <ORG_NAME>` is required for AI-generated commits and pull requests
+- Scope: `gk work` commands run across every repository in the active workspace
+
+| Command | Use when | Requires AI or auth | Output |
+| --- | --- | --- | --- |
+| `gk work start <name>` | Start a coordinated task across multiple repositories | No | Initializes the work item across the workspace |
+| `gk work info` | Review pending changes before committing or opening pull requests | No | Shows work item state across repositories |
+| `gk work commit --ai` | Create commits across repositories with AI-generated messages | Yes, plus a paid plan | Commits staged changes in all affected repositories |
+| `gk work pr create --ai` | Open pull requests for the current work item | Yes, plus a paid plan | Creates pull requests for all changes in scope |
+| `gk work end` | Finish the work item and clean up temporary resources | No | Closes the work item and offers cleanup options |
 
 ***
 
-## Quick Start
+## How to Start a GitKraken CLI Work Item Quickly
 
-To manage a work item across multiple repositories using GitKraken CLI:
+Use this Quick Start when you want the shortest path through a multi-repository task. The detailed command-by-command walkthrough appears later on this page.
 
 1. Start a new work item:
    ```
@@ -40,19 +61,19 @@ To manage a work item across multiple repositories using GitKraken CLI:
    gk work end
    ```
 
-All `gk work` commands execute in parallel across every repository in the active workspace. An authenticated GitKraken account with a configured organization is required to use AI-generated commit messages and pull requests.
+All `gk work` commands execute in parallel across every repository in the active workspace. An authenticated GitKraken account with a configured organization and paid plan is required to use AI-generated commit messages and pull requests.
 
 ***
 
-## Boost Efficiency with Parallel Execution
+## When to Use GitKraken CLI Work Items Instead of Standard Git Commands
 
-Execute commands across multiple repositories in parallel to complete tasks faster and more efficiently.
+Use `gk work` when one issue, bug fix, or feature spans multiple repositories in the same workspace. Use standard Git commands instead when the work stays in a single repository and you do not need synchronized commits, pull requests, or cleanup.
 
 ***
 
-## Example Workflow
+## How to Run a GitKraken CLI Work Item from Start to Finish
 
-To create a work item, use:
+Start with `gk work start` when you want GitKraken CLI to initialize a shared task across every repository in the active workspace:
 
 ```
 gk work start <name>
@@ -65,7 +86,7 @@ The `<name>` assigns a title to your work item. This initializes all repositorie
   <figcaption style="color:#888; text-align:center">Creating a work item initializes your workspace and checks for pending items.</figcaption>
 </figure>
 
-To view pending changes:
+Review the workspace state with `gk work info` before committing or opening pull requests across the full work item:
 
 ```
 gk work info
@@ -76,9 +97,9 @@ gk work info
   <figcaption style="color:#888; text-align:center">Use <code>gk work info</code> to review changes across all repositories.</figcaption>
 </figure>
 
-### Committing Changes with AI
+### How to Commit Work Item Changes with AI
 
-Use AI to generate commit messages and commit changes in parallel:
+Use `gk work commit --ai` when you want GitKraken CLI to generate commit messages and commit staged changes across every repository in the work item:
 
 ```
 gk work commit --ai
@@ -95,19 +116,19 @@ This command:
   <figcaption style="color:#888; text-align:center">AI-generated commit messages help standardize your commit history.</figcaption>
 </figure>
 
-### Creating a Pull Request with AI
+### How to Create Pull Requests for a Work Item with AI
 
-Generate pull requests using:
+Use `gk work pr create --ai` when you want GitKraken CLI to open pull requests for every repository included in the active work item:
 
 ```
 gk work pr create --ai
 ```
 
-This creates pull requests for **all** changes in the current work item with AI-generated messages, streamlining collaboration and review.
+This creates pull requests for **all** changes in the current work item with AI-generated messages. Use this command after you have reviewed the workspace state and committed the repositories that belong in the shared task.
 
-### Finalizing a Work Item
+### How to End and Clean Up a Work Item
 
-When your work is complete, end the work item with:
+Use `gk work end` when the shared task is complete and you want GitKraken CLI to close the work item and clean up temporary resources:
 
 ```
 gk work end

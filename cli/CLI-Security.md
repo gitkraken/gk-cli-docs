@@ -1,20 +1,36 @@
 ---
 
-title: Security Information - GitKraken CLI
-description: Data Security Information for GitKraken CLI
+title: GitKraken CLI Security and Data Storage Information
+description: Review what GitKraken CLI cloud-connected features store, how data is encrypted in transit and at rest, and which services send data to GitKraken-hosted systems.
+product: "GitKraken CLI"
+feature: "Security Information"
+content_type: "security"
+audience: "all"
+plan_required: "all"
+status: "GA"
+last_verified: "2026-03"
 taxonomy:
     category: cli
 
 ---
 
-<kbd>Last updated: February 2026</kbd>
+<kbd>Last updated: March 2026</kbd>
 
-Below is a chart outlining some basic security information regarding the type of data that we collect and how we store it.
+GitKraken CLI security information describes what GitKraken CLI cloud services store, how service data is encrypted in transit and at rest, and where that data is hosted. This page is for developers, admins, and security reviewers evaluating GitKraken CLI features such as Workspaces, Launchpad, Subscriptions, and Cloud Patches.
 
-| Service | What information are we collecting | How is this information secured in the transfer| Where is this information stored | How is this information secured in storage |
+## Requirements and scope
+
+- Product scope: GitKraken CLI cloud-connected features only
+- Local-only workflows: local Git commands that do not use GitKraken cloud features are outside the scope of this page
+- Audience: developers, admins, and security reviewers
+- Security focus: data collected, transport encryption, storage location, and encryption at rest
+
+## What GitKraken CLI cloud services store
+
+| Service | Data collected | Security in transit | Storage location | Security at rest |
 | --- | --- | --- | --- | --- |
-| Workspaces/Insights | Repo meta-data issues/PR’s | Encrypted with TLS | MongoDB Atlas | Encrypted at rest (AES-256) |
+| Workspaces/Insights | Repository metadata, issues, and pull requests | Encrypted with TLS | MongoDB Atlas | Encrypted at rest (AES-256) |
 | Teams & Users | Repo-relative file paths, number of lines changed, name of branch currently checked out, first commit SHA of the repository | Encrypted with TLS | MongoDB Atlas | Encrypted at rest (AES-256) |
-| Subscriptions | Billing info: lastFour, name, type (credit card, paypal, ach...), zip, country, creditCard type (mastercard, visa, ...) | Encrypted with TLS | MongoDB Atlas | Encrypted at rest (AES-256) |
-| Launchpad | Storing meta-data for issues/pull-requests/URLs | Encrypted with TLS | Postgres (RDS) | Encrypted at rest (AES-256) |
-| Cloud Patches | Info related to the patch (repo name/URL/provider/base branch name/etc.) + the patch content itself. | Encrypted with TLS | Patch info is stored in a Postgres database, patch content is stored in AWS S3. | SSE-S3, which uses 256-bit Advanced Encryption Standard (AES-256) |
+| Subscriptions | Billing metadata such as last four digits, name, payment type, ZIP code, country, and card type | Encrypted with TLS | MongoDB Atlas | Encrypted at rest (AES-256) |
+| Launchpad | Metadata for issues, pull requests, and URLs | Encrypted with TLS | Postgres (RDS) | Encrypted at rest (AES-256) |
+| Cloud Patches | Patch metadata such as repository, provider, and base branch, plus patch content | Encrypted with TLS | Patch metadata is stored in Postgres, and patch content is stored in AWS S3 | SSE-S3 with AES-256 |
