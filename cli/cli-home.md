@@ -227,6 +227,25 @@ Use this step when you want GitKraken CLI commands to run inside a selected GitK
    gk ws clone <name> <root-path>
    ```
 
+***
+
+## How to uninstall GitKraken CLI AI Hooks
+
+The GitKraken CLI registers hooks on Claude Code's or OpenCode's lifecycle events (session start/end, tool use, prompt submission, permission requests, and similar) and forwards those events to the local ```gk``` process to display agent status in GitKraken. Only event metadata is sent — prompt content, agent output, and source code are not captured.
+
+### Uninstall GitKraken CLI AI Hooks on Claude Code
+
+```bash
+gk ai hook uninstall claude-code
+```
+
+### Uninstall GitKraken CLI AI Hooks on OpenCode
+
+```bash
+gk ai hook uninstall opencode
+```
+
+
 <figure style="text-align: center">
   <img src="/wp-content/uploads/gk-cli-ws-set-new.png" class="img-bordered img-responsive center" alt="Setting a GitKraken workspace via CLI">
   <figcaption style="color:#888; text-align:center">Switching and cloning repositories within GitKraken CLI workspaces.</figcaption>
