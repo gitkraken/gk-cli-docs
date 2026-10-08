@@ -1,93 +1,99 @@
 ---
 title: How to Install and Set Up GitKraken CLI
-description: Install GitKraken CLI on macOS, Windows, or Linux, then authenticate, set an organization, sync providers, and load repositories into a workspace.
+description: Install GitKraken CLI on macOS, Windows, or Linux, sign in, set your organization, and connect your Git providers and issue trackers.
 product: "GitKraken CLI"
 feature: "CLI Setup and Getting Started"
 content_type: "install"
 audience: "all"
 plan_required: "all"
 status: "GA"
-last_verified: "2026-03"
+last_verified: "2026-10"
 taxonomy:
     category: cli
 ---
 
-<kbd>Last updated: March 2026</kbd>
+<kbd>Last updated: October 2026</kbd>
 
-GitKraken CLI is the command-line tool for managing GitKraken workspaces, providers, and AI-assisted workflows from the terminal. This page helps developers and agents install `gk`, authenticate with a GitKraken account, set an organization, and start working on macOS, Windows, or Linux.
+GitKraken CLI (`gk`) brings GitKraken to your terminal. You can write commits with AI, untangle messy changes into clean commits, resolve merge conflicts, and see your pull requests and issues without opening a browser. It also gives AI coding agents such as Claude Code, Cursor, and GitHub Copilot access to GitKraken tools.
 
-<figure style="text-align: center">
-  <img src="/wp-content/uploads/gk_cli_setup_new.png" class="img-responsive center img-bordered" alt="Screenshot of the GitKraken CLI setup screen">
-  <figcaption style="color:#888; text-align:center">GitKraken CLI Setup.</figcaption>
+If you use GitLens or GitKraken Desktop, you may already have `gk` on your machine. GitLens uses it to run the GitKraken MCP server, and GitKraken Desktop, GitLens, and Kepler ADE by GitKraken use it to show live AI agent sessions. To learn more, see [How GitKraken CLI Works with GitLens and GitKraken Desktop](https://help.gitkraken.com/cli/GK-CLI-gitlens-and-gitkraken-desktop/).
+
+This page shows you how to install `gk`, sign in, and connect your accounts on macOS, Windows, or Linux.
+
+<figure>
+  <img src="/wp-content/uploads/gk_cli_setup_new.png" class="help-center-img img-bordered" alt="GitKraken CLI welcome screen in a terminal after installation." />
+  <figcaption style="text-align: center; color: #888">GitKraken CLI setup</figcaption>
 </figure>
-
-GitKraken CLI is available on macOS, Windows, Linux, and Unix systems.
 
 ## Requirements
 
-- OS support: macOS, Windows, Linux, and Unix systems
-- Plan support: installation and basic CLI setup are available on all plans, including Community
-- Authentication: `gk auth login` is required for GitKraken cloud features
-- Organization: `gk organization set <ORG_NAME>` is required for AI-powered features
-- AI plan requirement: AI-powered features require a paid plan such as Pro, Advanced, Business, or Enterprise
-- Integrations: GitHub, GitLab, Bitbucket, and Jira can be synced with `gk provider list --sync`
+Before you start, check the following requirements:
 
-| Install method | OS | Command or action | Best for | Requires admin access |
+- **Operating system:** macOS, Windows, Linux, or another Unix system.
+- **Plan:** you can install and set up GitKraken CLI on any plan, including Community.
+- **Account:** sign in with `gk auth login` to use GitKraken cloud features.
+- **Organization:** set an organization with `gk organization set <ORG_NAME>` to use AI features.
+- **AI features:** AI-powered features require a paid plan such as Pro, Advanced, Business, or Enterprise.
+- **Integrations:** connect GitHub, GitLab, Bitbucket, Azure DevOps, Jira, Linear, or Trello. To see the full list, go to [How to Connect Providers in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-providers/).
+
+The following table compares the ways to install GitKraken CLI:
+
+| Install method | OS | Command or action | Best for | Needs admin access |
 | --- | --- | --- | --- | --- |
 | Homebrew | macOS | `brew install gitkraken-cli` | Standard macOS setup | No |
 | Winget | Windows | `winget install gitkraken.cli` | Standard Windows setup | Usually no |
 | Snap | Linux | `sudo snap install gitkraken-cli` | Managed Linux installs | Yes |
-| Binary download | macOS, Linux, Windows | Download from the releases page and add `gk` or `gk.exe` to `PATH` | Manual or portable installs | Depends on install location |
+| npm | macOS, Linux, Windows | `npm install -g @gitkraken/gk` | Machines that already use Node.js | Depends on your npm setup |
+| Binary download | macOS, Linux, Windows | Download from the releases page and add `gk` or `gk.exe` to your `PATH` | Manual or portable installs | Depends on install location |
 
 ***
 
 ## Quick Start
 
-Use this Quick Start when you want the shortest path to a working GitKraken CLI setup. The detailed installation and configuration walkthroughs appear later on this page.
+Follow these steps for the shortest path to a working setup. The sections later on this page explain each step in detail.
 
-1. Install `gk` using your platform's package manager (Homebrew, Winget, or Snap) or download a binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest).
-2. Authenticate with your GitKraken account to enable cloud features:
+1. Install `gk` with your package manager (Homebrew, Winget, Snap, or npm), or download a binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest).
+2. Sign in to your GitKraken account:
    ```
    gk auth login
    ```
-3. Confirm and set your organization (required to enable AI features):
+3. Check your organizations and set the one you want to use. You need an organization for AI features:
    ```
    gk organization list
    gk organization set <ORG_NAME>
    ```
-4. Sync your provider integrations (GitHub, GitLab, Bitbucket, Jira):
+4. Sync the Git providers and issue trackers you already connected to GitKraken:
    ```
    gk provider list --sync
    ```
-5. Set a workspace and clone repositories into it:
+5. Confirm your setup:
    ```
-   gk workspace set <NAME>
-   gk ws clone <name> <root-path>
+   gk whoami
    ```
 
-An authenticated session, configured organization, and paid plan are required for AI-powered features including commit message generation and pull request creation.
+To use AI-powered features, such as commit message generation and pull request creation, you need to be signed in, have an organization set, and have a paid plan.
 
 ***
 
 ## Where to Find GitKraken CLI Documentation
 
-Check out the [installation instructions](https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli) and [examples](https://help.gitkraken.com/cli/cli-home/#how-to-start-using-gitkraken-cli-after-installation) below. To view full command references, [see the GitKraken CLI command list](https://gitkraken.github.io/gk-cli/docs/gk.html).
+This Help Center explains what you can do with GitKraken CLI and how to use it in real workflows. Start with the [installation instructions](https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli) and the [setup steps](https://help.gitkraken.com/cli/cli-home/#how-to-start-using-gitkraken-cli-after-installation) on this page. For every command and flag, see the [GitKraken CLI command reference](https://gitkraken.github.io/gk-cli/docs/gk.html).
 
 ***
 
 ## How to Install GitKraken CLI
 
-Use a package manager when you want the simplest install path with native updates. Use the downloadable binary when you need a manual or portable install, or when your package manager is unavailable.
+Use a package manager for the simplest install and automatic updates. Use the downloadable binary for a manual or portable install, or when you can't use a package manager.
 
 ### How to Install GitKraken CLI on macOS
 
-Use Homebrew when you want the standard macOS install path with package-managed updates:
+Use Homebrew for the standard macOS install with package-managed updates:
 
 ```
 brew install gitkraken-cli
 ```
 
-Use the downloadable binary when you need a manual install or cannot use Homebrew:
+If you can't use Homebrew, download the binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest) and move it into a folder on your `PATH`:
 
 ```
 mv ~/Downloads/gk /usr/local/bin/gk
@@ -95,9 +101,11 @@ mv ~/Downloads/gk /usr/local/bin/gk
 
 ### How to Install GitKraken CLI on Linux and Unix
 
+You can install GitKraken CLI on Linux with Snap, a downloaded binary, or a `.deb` or `.rpm` package.
+
 #### How to Install GitKraken CLI with Snap
 
-Use Snap when you want a managed Linux install through the system package runtime:
+Use Snap for a managed Linux install:
 
 ```
 sudo snap install gitkraken-cli
@@ -105,21 +113,21 @@ sudo snap install gitkraken-cli
 
 #### How to Install GitKraken CLI from a Downloaded Binary
 
-Use the downloadable binary when Snap is unavailable or when you need a portable install from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest):
+If Snap isn't available, or you need a portable install, download the binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest) and move it into a system folder:
 
 ```
 mv ~/Downloads/gk /usr/local/bin/gk
 ```
 
-Use a user-owned directory when you do not want to install `gk` into a system path:
+To install `gk` without using a system folder, put it in a folder you own and add that folder to your `PATH`:
 
 ```
 mkdir "$HOME/cli"
 mv ~/Downloads/gk "$HOME/cli"
-export PATH="$HOME/gk:$PATH"
+export PATH="$HOME/cli:$PATH"
 ```
 
-Use native Linux packages when you already have a `.deb` or `.rpm` release artifact:
+If you downloaded a `.deb` or `.rpm` package from the releases page, install it with your system package manager. Replace the file name with the name of the file you downloaded:
 
 ```
 sudo apt install ./gk.deb
@@ -133,123 +141,170 @@ sudo rpm -i ./gk.rpm
 
 ### How to Install GitKraken CLI on Windows
 
-Use Winget when you want the standard Windows install path with package management:
+Use Winget for the standard Windows install with package management:
 
 ```
 winget install gitkraken.cli
 ```
 
-Use the downloadable binary when you need a manual Windows install. Download from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest), move `gk.exe` to your chosen directory, and update your system PATH:
+To install manually, download the binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest), move `gk.exe` to a folder of your choice, and add that folder to your system `PATH`:
 
-1. Search for **Environment Variables**.
+1. In the Windows search box, search for **Environment Variables**.
 2. Click **Edit the system environment variables**.
 3. Click **Environment Variables...**.
-4. In **System Variables**, locate or create the **PATH** variable.
-5. Append the path to `gk.exe`.
+4. In **System Variables**, find or create the **PATH** variable.
+5. Add the folder that contains `gk.exe`.
+
+### How to Install GitKraken CLI with npm
+
+If you already use Node.js, you can install GitKraken CLI on any platform with npm:
+
+```
+npm install -g @gitkraken/gk
+```
 
 ***
 
 ## How to Troubleshoot GitKraken CLI Installation
 
+Use the following fixes for common installation problems.
+
 ### How to Fix the Oh-My-Zsh `gk` Alias Conflict
 
-Oh-My-Zsh may alias `gitk` as `gk`. To remove the alias:
+Oh-My-Zsh defines `gk` as an alias for `gitk`, so typing `gk` may open `gitk` instead of GitKraken CLI. To remove the alias from your current terminal session, run:
 
 ```
 unalias gk
+```
+
+### How to Sign In on a Machine Without a Browser
+
+On a remote server or another machine without a browser, run `gk auth login` and open the URL it prints in a browser on any device. If the GitKraken login page shows you a single-use code, pass it to the CLI:
+
+```
+gk auth login --auth-code <CODE>
 ```
 
 ***
 
 ## How to Start Using GitKraken CLI After Installation
 
-Use GitKraken CLI without logging in when you only need local command-line workflows. Sign in with your GitKraken account when you need AI-generated commits or pull requests, cloud workspaces, MCP integration, or synchronized providers:
+You can use GitKraken CLI without signing in for local Git work. To use the following features, sign in with your GitKraken account:
+
+- AI-generated commits and pull requests
+- The GitKraken MCP server for AI coding agents
+- Pull request and issue lists from your connected providers
+
+To sign in, run:
 
 ```
 gk auth login
 ```
 
-This command opens your default browser to complete authentication. 
+This command opens your default browser so you can finish signing in.
 
-If no default browser is set on your device, the URL will appear in your terminal. Copy this URL and open it in any browser, then enter the code provided by [gk.dev](gitkraken.dev) to complete the login process.
+If you don't have a default browser set, the CLI prints a URL in your terminal. Open that URL in any browser, then enter the code from [gitkraken.dev](https://gitkraken.dev) to finish signing in.
+
+To check who you're signed in as, which organization is active, and which providers you've connected, run:
+
+```
+gk whoami
+```
+
+To sign out, run `gk auth logout`. To sign out of every session, add `--all`.
 
 ### How to Set Your GitKraken Organization
 
-Use this step when you need AI-powered features that depend on an active GitKraken organization. To verify your current organization:
+AI features run under your active GitKraken organization. To see your organizations, run:
 
 ```
 gk organization list
 ```
 
-Set your organization (required for AI features):
+To set the organization you want to use, run:
 
 ```
 gk organization set <ORG_NAME>
 ```
 
-<figure style="text-align: center">
-  <img src="/wp-content/uploads/gk-cli-org-ls-new.png" class="img-bordered img-responsive center" alt="Organization list view in GitKraken CLI">
-  <figcaption style="color:#888; text-align:center">Use gk organization list to confirm and set the correct GitKraken Organization.</figcaption>
+<figure>
+  <img src="/wp-content/uploads/gk-cli-org-ls-new.png" class="help-center-img img-bordered" alt="Output of gk organization list showing the available GitKraken organizations and which one is active." />
+  <figcaption style="text-align: center; color: #888">Use <code>gk organization list</code> to confirm and set your GitKraken organization.</figcaption>
 </figure>
 
 ### How to Sync Your Git Provider and Jira Integrations
 
-Use this step when you want GitKraken CLI to discover connected Git providers and Jira accounts. Once authenticated and your organization is set, synchronize integrations:
+If you already connected GitHub, GitLab, Bitbucket, Jira, or other integrations in GitKraken Desktop, GitLens, or gitkraken.dev, sync them to the CLI. After you sign in and set your organization, run:
 
 ```
 gk provider list --sync
 ```
 
-To add a provider manually:
+To add a provider manually, run `gk provider add` with the provider name, such as `github` or `jira`:
 
 ```
-gk provider add
+gk provider add <PROVIDER>
 ```
 
-See `gk provider add --help` for available options.
-
-Supported integrations include GitHub, GitLab, Bitbucket, and Jira.
+To see the available options, run `gk provider add --help`. To connect a self-hosted instance or more than one account, see [How to Connect Providers in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-providers/).
 
 ### How to Load Repositories Into a GitKraken Workspace
 
-Use this step when you want GitKraken CLI commands to run inside a selected GitKraken workspace. To work within a GitKraken workspace:
+> **Note:** As of GitKraken CLI 3.1.76, the `gk workspace` commands are deprecated and will be removed in a future release. They still work, but each command prints a deprecation warning.
 
-1. List available workspaces:
+To work with an existing GitKraken workspace from the CLI:
+
+1. List your workspaces:
    ```
    gk workspace list
    ```
-2. Set your desired workspace:
+2. Set the workspace you want to use:
    ```
    gk workspace set <NAME>
    ```
-3. Clone a repository into the workspace:
+3. Clone the workspace repositories into a local folder (`gk ws` is short for `gk workspace`):
    ```
    gk ws clone <name> <root-path>
    ```
 
+<figure>
+  <img src="/wp-content/uploads/gk-cli-ws-set-new.png" class="help-center-img img-bordered" alt="Terminal output after setting a GitKraken workspace and cloning its repositories." />
+  <figcaption style="text-align: center; color: #888">Setting a workspace and cloning its repositories in GitKraken CLI.</figcaption>
+</figure>
+
 ***
 
-## How to uninstall GitKraken CLI AI Hooks
+## What to Do Next
 
-The GitKraken CLI registers hooks on Claude Code's or OpenCode's lifecycle events (session start/end, tool use, prompt submission, permission requests, and similar) and forwards those events to the local ```gk``` process to display agent status in GitKraken. Only event metadata is sent — prompt content, agent output, and source code are not captured.
+After setup, try the following:
 
-### Uninstall GitKraken CLI AI Hooks on Claude Code
+- [Use AI features](https://help.gitkraken.com/cli/GK-CLI-ai-features/) to write commits, compose clean commits, and resolve merge conflicts.
+- [Track pull requests and issues](https://help.gitkraken.com/cli/GK-CLI-pull-requests-and-issues/) across your providers.
+- [Connect AI coding agents](https://help.gitkraken.com/cli/gk-cli-mcp/) to the GitKraken MCP server.
+
+***
+
+## How to Uninstall GitKraken CLI AI Hooks
+
+GitKraken Desktop, GitLens, and Kepler can show live status for your AI coding agent sessions. To do this, GitKraken CLI registers hooks on the agent's lifecycle events, such as session start and end, tool use, prompt submission, and permission requests. Each hook sends the event to the local `gk` process, which saves the session on your computer and passes it to GitKraken apps running on the same computer.
+
+Hook data stays on your computer. Depending on the event, it can include your prompt, the tool the agent is using and its arguments, and the files the agent changed. To learn more, see [How GitKraken CLI Works with GitLens and GitKraken Desktop](https://help.gitkraken.com/cli/GK-CLI-gitlens-and-gitkraken-desktop/).
+
+To stop sending agent events to GitKraken apps, uninstall the hooks for that agent.
+
+### Uninstall GitKraken CLI AI Hooks for Claude Code
 
 ```bash
 gk ai hook uninstall claude-code
 ```
 
-### Uninstall GitKraken CLI AI Hooks on OpenCode
+### Uninstall GitKraken CLI AI Hooks for OpenCode
 
 ```bash
 gk ai hook uninstall opencode
 ```
 
-
-<figure style="text-align: center">
-  <img src="/wp-content/uploads/gk-cli-ws-set-new.png" class="img-bordered img-responsive center" alt="Setting a GitKraken workspace via CLI">
-  <figcaption style="color:#888; text-align:center">Switching and cloning repositories within GitKraken CLI workspaces.</figcaption>
-</figure>
+To see which agents have hooks installed, run `gk agents list`. Hooks are also available for Cursor, Codex, GitHub Copilot CLI, Antigravity, Pi, Augment, and Grok Build.
 
 <style>
 pre{position:relative;min-height:3.5em}

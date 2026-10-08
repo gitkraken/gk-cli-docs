@@ -1,87 +1,120 @@
-# GitKraken CLI — Full Documentation
+# GitKraken CLI: Full Documentation
 
-> GitKraken CLI (`gk`) is the command-line tool for GitKraken workspaces, providers, and AI-assisted workflows. Available on macOS, Windows, Linux, and Unix systems.
+> GitKraken CLI (`gk`) brings GitKraken to your terminal: AI commits, commit composing, AI conflict resolution, pull requests and issues across providers, and GitKraken tools for AI coding agents. Available on macOS, Windows, Linux, and Unix systems.
 
-Source: https://help.gitkraken.com/cli/cli-home/
 Full command reference: https://gitkraken.github.io/gk-cli/docs/gk.html
-Install section: https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli
-Setup section: https://help.gitkraken.com/cli/cli-home/#how-to-start-using-gitkraken-cli-after-installation
 
-Last updated: March 2026
+Last updated: October 2026
 
 ---
 
-## Getting Started & Installation
+## How to Install and Set Up GitKraken CLI
 
-GitKraken CLI is available on macOS, Windows, Linux, and Unix systems.
+Source: https://help.gitkraken.com/cli/cli-home/
 
-Requirements:
-- OS support: macOS, Windows, Linux, and Unix systems
-- Plan support: installation and basic CLI setup are available on all plans, including Community
-- Authentication: `gk auth login` is required for GitKraken cloud features
-- Organization: `gk organization set <ORG_NAME>` is required for AI-powered features
-- AI plan requirement: AI-powered features require a paid plan such as Pro, Advanced, Business, or Enterprise
-- Integrations: GitHub, GitLab, Bitbucket, and Jira can be synced with `gk provider list --sync`
+GitKraken CLI (`gk`) brings GitKraken to your terminal. You can write commits with AI, untangle messy changes into clean commits, resolve merge conflicts, and see your pull requests and issues without opening a browser. It also gives AI coding agents such as Claude Code, Cursor, and GitHub Copilot access to GitKraken tools.
+
+If you use GitLens or GitKraken Desktop, you may already have `gk` on your machine. GitLens uses it to run the GitKraken MCP server, and GitKraken Desktop, GitLens, and Kepler ADE by GitKraken use it to show live AI agent sessions. To learn more, see [How GitKraken CLI Works with GitLens and GitKraken Desktop](https://help.gitkraken.com/cli/GK-CLI-gitlens-and-gitkraken-desktop/).
+
+This page shows you how to install `gk`, sign in, and connect your accounts on macOS, Windows, or Linux.
+
+### Requirements
+
+Before you start, check the following requirements:
+
+- **Operating system:** macOS, Windows, Linux, or another Unix system.
+- **Plan:** you can install and set up GitKraken CLI on any plan, including Community.
+- **Account:** sign in with `gk auth login` to use GitKraken cloud features.
+- **Organization:** set an organization with `gk organization set <ORG_NAME>` to use AI features.
+- **AI features:** AI-powered features require a paid plan such as Pro, Advanced, Business, or Enterprise.
+- **Integrations:** connect GitHub, GitLab, Bitbucket, Azure DevOps, Jira, Linear, or Trello. To see the full list, go to [How to Connect Providers in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-providers/).
+
+The following table compares the ways to install GitKraken CLI:
+
+| Install method | OS | Command or action | Best for | Needs admin access |
+| --- | --- | --- | --- | --- |
+| Homebrew | macOS | `brew install gitkraken-cli` | Standard macOS setup | No |
+| Winget | Windows | `winget install gitkraken.cli` | Standard Windows setup | Usually no |
+| Snap | Linux | `sudo snap install gitkraken-cli` | Managed Linux installs | Yes |
+| npm | macOS, Linux, Windows | `npm install -g @gitkraken/gk` | Machines that already use Node.js | Depends on your npm setup |
+| Binary download | macOS, Linux, Windows | Download from the releases page and add `gk` or `gk.exe` to your `PATH` | Manual or portable installs | Depends on install location |
 
 ### Quick Start
 
-Use this Quick Start when you want the shortest path to a working GitKraken CLI setup. The detailed installation and configuration walkthroughs appear later on this page.
+Follow these steps for the shortest path to a working setup. The sections later on this page explain each step in detail.
 
-1. Install `gk` using your platform's package manager (Homebrew, Winget, or Snap) or download a binary from the releases page.
-2. Authenticate with your GitKraken account to enable cloud features:
+1. Install `gk` with your package manager (Homebrew, Winget, Snap, or npm), or download a binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest).
+2. Sign in to your GitKraken account:
    ```
    gk auth login
    ```
-3. Confirm and set your organization (required to enable AI features):
+3. Check your organizations and set the one you want to use. You need an organization for AI features:
    ```
    gk organization list
    gk organization set <ORG_NAME>
    ```
-4. Sync your provider integrations (GitHub, GitLab, Bitbucket, Jira):
+4. Sync the Git providers and issue trackers you already connected to GitKraken:
    ```
    gk provider list --sync
    ```
-5. Set a workspace and clone repositories into it:
+5. Confirm your setup:
    ```
-   gk workspace set <NAME>
-   gk ws clone <name> <root-path>
+   gk whoami
    ```
 
-An authenticated session, configured organization, and paid plan are required for AI-powered features including commit message generation and pull request creation.
+To use AI-powered features, such as commit message generation and pull request creation, you need to be signed in, have an organization set, and have a paid plan.
 
-### How to Install GitKraken CLI on macOS
+### Where to Find GitKraken CLI Documentation
 
-Use Homebrew when you want the standard macOS install path with package-managed updates:
+This Help Center explains what you can do with GitKraken CLI and how to use it in real workflows. Start with the [installation instructions](https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli) and the [setup steps](https://help.gitkraken.com/cli/cli-home/#how-to-start-using-gitkraken-cli-after-installation) on this page. For every command and flag, see the [GitKraken CLI command reference](https://gitkraken.github.io/gk-cli/docs/gk.html).
+
+### How to Install GitKraken CLI
+
+Use a package manager for the simplest install and automatic updates. Use the downloadable binary for a manual or portable install, or when you can't use a package manager.
+
+#### How to Install GitKraken CLI on macOS
+
+Use Homebrew for the standard macOS install with package-managed updates:
 
 ```
 brew install gitkraken-cli
 ```
 
-Use the downloadable binary when you need a manual install or cannot use Homebrew:
+If you can't use Homebrew, download the binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest) and move it into a folder on your `PATH`:
 
 ```
 mv ~/Downloads/gk /usr/local/bin/gk
 ```
 
-### How to Install GitKraken CLI on Linux and Unix
+#### How to Install GitKraken CLI on Linux and Unix
 
-#### How to Install GitKraken CLI with Snap
+You can install GitKraken CLI on Linux with Snap, a downloaded binary, or a `.deb` or `.rpm` package.
 
-Use Snap when you want a managed Linux install through the system package runtime:
+##### How to Install GitKraken CLI with Snap
+
+Use Snap for a managed Linux install:
 
 ```
 sudo snap install gitkraken-cli
 ```
 
-#### How to Install GitKraken CLI from a Downloaded Binary
+##### How to Install GitKraken CLI from a Downloaded Binary
 
-Use the downloadable binary when Snap is unavailable or when you need a portable install from the releases page:
+If Snap isn't available, or you need a portable install, download the binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest) and move it into a system folder:
 
 ```
 mv ~/Downloads/gk /usr/local/bin/gk
 ```
 
-Use native Linux packages when you already have a `.deb` or `.rpm` release artifact:
+To install `gk` without using a system folder, put it in a folder you own and add that folder to your `PATH`:
+
+```
+mkdir "$HOME/cli"
+mv ~/Downloads/gk "$HOME/cli"
+export PATH="$HOME/cli:$PATH"
+```
+
+If you downloaded a `.deb` or `.rpm` package from the releases page, install it with your system package manager. Replace the file name with the name of the file you downloaded:
 
 ```
 sudo apt install ./gk.deb
@@ -93,150 +126,965 @@ or
 sudo rpm -i ./gk.rpm
 ```
 
-### How to Install GitKraken CLI on Windows
+#### How to Install GitKraken CLI on Windows
 
-Use Winget when you want the standard Windows install path with package management:
+Use Winget for the standard Windows install with package management:
 
 ```
 winget install gitkraken.cli
 ```
 
-Use the downloadable binary when you need a manual Windows install. Download `gk.exe` from the releases page, move it to your chosen directory, and add it to your system PATH via Environment Variables.
+To install manually, download the binary from the [releases page](https://github.com/gitkraken/gk-cli/releases/latest), move `gk.exe` to a folder of your choice, and add that folder to your system `PATH`:
+
+1. In the Windows search box, search for **Environment Variables**.
+2. Click **Edit the system environment variables**.
+3. Click **Environment Variables...**.
+4. In **System Variables**, find or create the **PATH** variable.
+5. Add the folder that contains `gk.exe`.
+
+#### How to Install GitKraken CLI with npm
+
+If you already use Node.js, you can install GitKraken CLI on any platform with npm:
+
+```
+npm install -g @gitkraken/gk
+```
 
 ### How to Troubleshoot GitKraken CLI Installation
 
+Use the following fixes for common installation problems.
+
 #### How to Fix the Oh-My-Zsh `gk` Alias Conflict
 
-Oh-My-Zsh may alias `gitk` as `gk`. To remove the alias:
+Oh-My-Zsh defines `gk` as an alias for `gitk`, so typing `gk` may open `gitk` instead of GitKraken CLI. To remove the alias from your current terminal session, run:
 
 ```
 unalias gk
 ```
 
----
+#### How to Sign In on a Machine Without a Browser
 
-## Authentication & Setup
+On a remote server or another machine without a browser, run `gk auth login` and open the URL it prints in a browser on any device. If the GitKraken login page shows you a single-use code, pass it to the CLI:
 
-Use GitKraken CLI without logging in when you only need local command-line workflows. Sign in with your GitKraken account when you need cloud workspaces, MCP integration, or synchronized providers. AI-generated commits and pull requests also require a paid plan:
+```
+gk auth login --auth-code <CODE>
+```
+
+### How to Start Using GitKraken CLI After Installation
+
+You can use GitKraken CLI without signing in for local Git work. To use the following features, sign in with your GitKraken account:
+
+- AI-generated commits and pull requests
+- The GitKraken MCP server for AI coding agents
+- Pull request and issue lists from your connected providers
+
+To sign in, run:
 
 ```
 gk auth login
 ```
 
-This opens your default browser to complete authentication. If no browser is set, a URL will appear in the terminal — open it manually and enter the code from gk.dev.
+This command opens your default browser so you can finish signing in.
 
-### How to Set Your GitKraken Organization
+If you don't have a default browser set, the CLI prints a URL in your terminal. Open that URL in any browser, then enter the code from [gitkraken.dev](https://gitkraken.dev) to finish signing in.
 
-Use this step when you need AI-powered features that depend on an active GitKraken organization. To verify your current organization:
+To check who you're signed in as, which organization is active, and which providers you've connected, run:
+
+```
+gk whoami
+```
+
+To sign out, run `gk auth logout`. To sign out of every session, add `--all`.
+
+#### How to Set Your GitKraken Organization
+
+AI features run under your active GitKraken organization. To see your organizations, run:
 
 ```
 gk organization list
 ```
 
-Set your active organization (required for AI features on paid plans):
+To set the organization you want to use, run:
 
 ```
 gk organization set <ORG_NAME>
 ```
 
-### How to Sync Your Git Provider and Jira Integrations
+#### How to Sync Your Git Provider and Jira Integrations
 
-Use this step when you want GitKraken CLI to discover connected Git providers and Jira accounts. Once authenticated and your organization is set, synchronize integrations:
+If you already connected GitHub, GitLab, Bitbucket, Jira, or other integrations in GitKraken Desktop, GitLens, or gitkraken.dev, sync them to the CLI. After you sign in and set your organization, run:
 
 ```
 gk provider list --sync
 ```
 
-To add a provider manually:
+To add a provider manually, run `gk provider add` with the provider name, such as `github` or `jira`:
 
 ```
-gk provider add
+gk provider add <PROVIDER>
 ```
 
-Supported integrations include GitHub, GitLab, Bitbucket, and Jira.
+To see the available options, run `gk provider add --help`. To connect a self-hosted instance or more than one account, see [How to Connect Providers in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-providers/).
 
-### How to Load Repositories Into a GitKraken Workspace
+#### How to Load Repositories Into a GitKraken Workspace
 
-Use this step when you want GitKraken CLI commands to run inside a selected GitKraken workspace.
-1. List available workspaces:
+> **Note:** As of GitKraken CLI 3.1.76, the `gk workspace` commands are deprecated and will be removed in a future release. They still work, but each command prints a deprecation warning.
+
+To work with an existing GitKraken workspace from the CLI:
+
+1. List your workspaces:
    ```
    gk workspace list
    ```
-2. Set your desired workspace:
+2. Set the workspace you want to use:
    ```
    gk workspace set <NAME>
    ```
-3. Clone a repository into the workspace:
+3. Clone the workspace repositories into a local folder (`gk ws` is short for `gk workspace`):
    ```
    gk ws clone <name> <root-path>
    ```
 
+### What to Do Next
+
+After setup, try the following:
+
+- [Use AI features](https://help.gitkraken.com/cli/GK-CLI-ai-features/) to write commits, compose clean commits, and resolve merge conflicts.
+- [Track pull requests and issues](https://help.gitkraken.com/cli/GK-CLI-pull-requests-and-issues/) across your providers.
+- [Connect AI coding agents](https://help.gitkraken.com/cli/gk-cli-mcp/) to the GitKraken MCP server.
+
+### How to Uninstall GitKraken CLI AI Hooks
+
+GitKraken Desktop, GitLens, and Kepler can show live status for your AI coding agent sessions. To do this, GitKraken CLI registers hooks on the agent's lifecycle events, such as session start and end, tool use, prompt submission, and permission requests. Each hook sends the event to the local `gk` process, which saves the session on your computer and passes it to GitKraken apps running on the same computer.
+
+Hook data stays on your computer. Depending on the event, it can include your prompt, the tool the agent is using and its arguments, and the files the agent changed. To learn more, see [How GitKraken CLI Works with GitLens and GitKraken Desktop](https://help.gitkraken.com/cli/GK-CLI-gitlens-and-gitkraken-desktop/).
+
+To stop sending agent events to GitKraken apps, uninstall the hooks for that agent.
+
+#### Uninstall GitKraken CLI AI Hooks for Claude Code
+
+```bash
+gk ai hook uninstall claude-code
+```
+
+#### Uninstall GitKraken CLI AI Hooks for OpenCode
+
+```bash
+gk ai hook uninstall opencode
+```
+
+To see which agents have hooks installed, run `gk agents list`. Hooks are also available for Cursor, Codex, GitHub Copilot CLI, Antigravity, Pi, Augment, and Grok Build.
+
 ---
 
-## Work Items
+## How GitKraken CLI Works with GitLens and GitKraken Desktop
+
+Source: https://help.gitkraken.com/cli/GK-CLI-gitlens-and-gitkraken-desktop/
+
+If you use GitLens or GitKraken Desktop, GitKraken CLI (`gk`) may already be working for you. GitLens uses it to give your AI assistant GitKraken tools. GitKraken Desktop, GitLens, and [Kepler ADE by GitKraken](https://help.gitkraken.com/kepler/kepler-getting-started/) use it to show what your AI coding agents are doing. This page explains what you see in each product, what `gk` does behind the scenes, and how to check or turn off each connection.
+
+GitLens runs in VS Code, Cursor, Windsurf, Trae, and Kiro. Everything on this page about GitLens applies to all of these editors.
+
+### Requirements
+
+The connections on this page depend on the following:
+
+- **GitLens:** the GitLens tools that an AI assistant can call need GitLens 17.10.0 or later.
+- **Account:** most GitKraken MCP tools need you to be signed in to your GitKraken account.
+- **Same computer:** GitKraken CLI connects to GitKraken Desktop, GitLens, and Kepler only when they run on the same computer.
+
+### What GitKraken CLI Does in Each Product
+
+The following table summarizes what you see in each product and what GitKraken CLI does behind the scenes:
+
+| What you see | Where | What GitKraken CLI does |
+| --- | --- | --- |
+| A GitKraken MCP server in your editor's AI chat | GitLens | Runs the GitKraken MCP server (`gk mcp`), which gives your AI assistant Git, pull request, and issue tools |
+| Your AI assistant opens Launchpad, starts work on an issue, or starts a pull request review in GitLens | GitLens | Finds the GitLens window for your repository and asks it to open that view |
+| Live status for your AI agent sessions, such as the current tool and prompt | GitKraken Desktop, GitLens, and Kepler | Receives events from AI agent hooks and passes them to the app |
+| Approve or deny an agent's tool request from the app, when the app supports it | GitKraken Desktop, GitLens, and Kepler | Holds the agent's request until you decide in the app, then returns your decision to the agent |
+
+### How GitLens Uses GitKraken CLI for the GitKraken MCP Server
+
+The GitKraken MCP server lets AI assistants such as GitHub Copilot, Cursor, and Claude work with your repositories, pull requests, and issues through GitKraken. For example, you can ask your assistant "What issues are assigned to me?" and it uses your connected GitHub, Jira, or other integrations to answer.
+
+GitLens installs the GitKraken MCP server for you:
+
+- **VS Code:** if your version of VS Code supports it, GitLens installs the server automatically.
+- **Cursor, Windsurf, Trae, and Kiro:** open the Command Palette, run **GitLens: Install MCP Server**, and follow the prompts.
+
+Behind the scenes, GitLens installs GitKraken CLI and runs `gk mcp install` for your editor. That command adds a **GitKraken** entry to your editor's MCP settings. When your AI assistant starts the server, it runs `gk mcp`.
+
+When an MCP tool needs you to sign in or connect an integration, it opens GitLens so you can finish in your editor.
+
+To learn more about the GitKraken MCP server and its tools, see the [GitKraken MCP documentation](https://help.gitkraken.com/mcp/mcp-getting-started/). To install the server in other AI tools, see [How to Use GitKraken CLI with AI Coding Agents](https://help.gitkraken.com/cli/gk-cli-mcp/).
+
+#### How Your AI Assistant Works with an Open GitLens Window
+
+When GitLens is open, the GitKraken MCP server can hand work to it. Your AI assistant can do the following:
+
+- Show your Launchpad list of pull requests and issues.
+- Start work on an issue in GitLens.
+- Start a review of a pull request in GitLens.
+
+GitKraken CLI finds the GitLens window that has your repository open and sends the request to it over a local connection.
+
+### How GitKraken Desktop, GitLens, and Kepler Show Your AI Agent Sessions
+
+GitKraken Desktop, GitLens, and Kepler can show live status for AI coding agents, such as Claude Code, Cursor, Codex, and GitHub Copilot CLI. Kepler, GitKraken's agentic development environment (ADE), uses these updates to show your agent sessions as they run. You can see the following details for each session:
+
+- Whether the agent is working, idle, or waiting for you.
+- The prompt you gave the agent and the tool it's using.
+- Subagents and the files the agent changed.
+
+When the app supports it, you can also approve or deny an agent's permission request from the app.
+
+GitKraken CLI makes this work with hooks. A hook is a small command that an AI agent runs when something happens, such as a session starting, a prompt being submitted, or a tool being used. GitKraken CLI installs a hook in the agent's settings. For Claude Code, it installs a `gitkraken-hooks` plugin. Each time the hook runs, `gk` does the following:
+
+1. Saves the session update in a local cache on your computer.
+2. Sends the update to GitKraken Desktop, GitLens, or Kepler running on the same computer.
+3. For a permission request that the app handles, waits for your decision in the app and passes it back to the agent.
+
+Hooks are available for Claude Code, OpenCode, Cursor, Codex, GitHub Copilot CLI, Antigravity, Pi, Augment, and Grok Build.
+
+#### What Data AI Agent Hooks Use
+
+Hook data stays on your computer. GitKraken CLI sends it only to GitKraken apps running on the same computer and doesn't upload it to GitKraken.
+
+Depending on the event, a session update can include the following:
+
+- The prompt you gave the agent.
+- The tool the agent is using and its arguments.
+- The files the agent changed and the folders it worked in.
+- The agent's model and session state.
+
+Because session data can include prompts and file paths, treat it as sensitive. GitKraken CLI removes ended sessions from its local cache after 30 days.
+
+### How to Check and Turn Off GitKraken CLI Connections
+
+To see every AI agent GitKraken CLI knows about, whether the agent is on your computer, and whether the GitKraken MCP server and hooks are installed for it, run:
+
+```
+gk agents list
+```
+
+To stop sending an agent's events to GitKraken Desktop, GitLens, and Kepler, uninstall its hooks. Live session status for that agent stops working until you install the hooks again. For example, for Claude Code:
+
+```
+gk ai hook uninstall claude-code
+```
+
+To remove the GitKraken MCP server from an AI tool, run `gk mcp uninstall` with the tool's name. For example, for Cursor:
+
+```
+gk mcp uninstall cursor
+```
+
+To find the names to use, run `gk mcp install --list`. For every option, see the [`gk mcp uninstall` command reference](https://gitkraken.github.io/gk-cli/docs/gk_mcp_uninstall.html).
+
+---
+
+## How to Use AI Features in GitKraken CLI
+
+Source: https://help.gitkraken.com/cli/GK-CLI-ai-features/
+
+GitKraken CLI brings AI help to the parts of Git that slow you down. You can write a commit message from your staged changes, split a pile of unrelated edits into clean commits, resolve merge conflicts, and draft a pull request, all without leaving your terminal. Each AI command shows you the result before it changes anything, so you stay in control.
+
+This page shows you how to use each AI feature, choose a model, and use your own AI provider. For every flag, see the [`gk ai` command reference](https://gitkraken.github.io/gk-cli/docs/gk_ai.html).
+
+### Requirements
+
+To use AI features, you need the following:
+
+- **Account:** sign in with `gk auth login`. You need to sign in even when you use your own AI provider, because GitKraken CLI downloads its prompts from GitKraken.
+- **Organization:** set an organization with `gk organization set <ORG_NAME>`. GitKraken AI requests run under your active organization.
+- **Plan:** AI-powered features require a paid plan such as Pro, Advanced, Business, or Enterprise.
+- **AI credits:** GitKraken AI uses your organization's GitKraken AI credits. Your own AI provider doesn't use GitKraken AI credits.
+- **Repository:** run each command inside a Git repository, or point to one with `--path` or `--workdir`.
+
+The following table summarizes the AI commands:
+
+| Command | Use it to | Changes your repository |
+| --- | --- | --- |
+| `gk ai commit` | Write a commit message for your staged changes and commit | Yes, after you confirm |
+| `gk ai compose` | Group your changes into a series of clean commits | Only when you apply a plan |
+| `gk ai resolve` | Propose and stage resolutions for merge conflicts | Only when you apply a plan |
+| `gk ai explain` | Explain what a branch or commit changes | No |
+| `gk ai changelog` | Write a changelog between two commits or branches | No |
+| `gk ai pr create` | Write a pull request title and description and open the pull request | Opens a pull request, after you confirm |
+
+### How to Write a Commit Message with AI
+
+Stage your changes with `git add`, then run:
+
+```
+gk ai commit
+```
+
+GitKraken CLI reads your staged changes, writes a commit message, and shows it to you. Confirm to create the commit. To add a longer description under the commit message, add `--add-description`.
+
+### How to Turn Messy Changes into Clean Commits with AI
+
+When you've changed several unrelated things at once, such as a bug fix, a rename, and a new test, `gk ai compose` sorts the changes into a series of focused commits. It works at the hunk level, so it can split the edits in a single file across more than one commit.
+
+Compose works in three steps: plan, review, and apply.
+
+1. Create a plan and save it to a file. This step doesn't change your repository:
+   ```
+   gk ai compose plan --plan-file plan.json
+   ```
+   GitKraken CLI prints one line for each proposed commit, with its message and how many files and lines it covers.
+2. If the plan isn't what you want, run step 1 again with guidance. For example, to group commits by type of change, such as fixes, features, and tests, add `--direction type`. To give your own instructions, add `--direction custom --instructions "keep the API rename separate"`.
+3. Apply the plan you reviewed:
+   ```
+   gk ai compose apply-plan plan.json
+   ```
+   Applying a saved plan doesn't call AI again, so it doesn't use AI credits.
+
+Each apply returns an undo ID. To reverse the commits, run:
+
+```
+gk ai compose undo <UNDO_ID>
+```
+
+To list the undo IDs in your repository, run `gk ai compose undo --list`.
+
+By default, compose reads all your staged, unstaged, and new files and writes the commits to your current branch. You can also compose only staged changes, rework the commits already on a branch, or split a branch into a stack of smaller branches. For these options, see the [`gk ai compose` command reference](https://gitkraken.github.io/gk-cli/docs/gk_ai_compose.html).
+
+> **Tip:** `gk ai compose apply` creates a plan and applies it in one step, without a chance to review. Use it only when you don't need to see the plan first.
+
+### How to Resolve Merge Conflicts with AI
+
+When a merge, rebase, or cherry-pick stops with conflicts, `gk ai resolve` proposes a resolution for each conflicted file and explains its reasoning. It uses the same engine as the Resolve app in the GitKraken MCP server.
+
+Resolve works in three steps: plan, review, and apply.
+
+1. Create a plan and save it to a file. This step doesn't change your repository:
+   ```
+   gk ai resolve plan --plan-file resolve-plan.json
+   ```
+2. Review each proposed resolution in the plan, including its confidence and reasoning. To improve the proposal for one file, refine it with instructions:
+   ```
+   gk ai resolve refine-plan resolve-plan.json --file src/example.ts --instructions "keep both validation checks" --plan-file resolve-plan-v2.json
+   ```
+3. Apply the reviewed plan. GitKraken CLI writes the resolved files and stages them:
+   ```
+   gk ai resolve apply-plan resolve-plan-v2.json
+   ```
+
+Resolve never commits, pushes, or finishes the merge or rebase for you. After you apply the plan, run `git status`, check the result, and continue the merge or rebase yourself.
+
+If your files change after you create a plan, applying it fails instead of writing the wrong content. Create a new plan and try again.
+
+> **Note:** As of GitKraken CLI 3.1.74, running `gk ai resolve` on its own shows help instead of resolving conflicts. Use `gk ai resolve plan` and `gk ai resolve apply-plan`. The `--path` flag is replaced by `--workdir`.
+
+Saved plans can contain your source code. Delete them when you no longer need them. For more options, such as resolving only some files or falling back to "ours" or "theirs" when AI can't resolve a file, see the [`gk ai resolve` command reference](https://gitkraken.github.io/gk-cli/docs/gk_ai_resolve.html).
+
+### How to Explain a Branch or Commit with AI
+
+Before you review or merge a branch, get a summary of what it changes compared with its base branch:
+
+```
+gk ai explain branch
+```
+
+To explain a single commit, run `gk ai explain commit`. Neither command changes your repository.
+
+### How to Write a Changelog with AI
+
+To write a changelog for a release, run `gk ai changelog` with the two branches or commits you want to compare:
+
+```
+gk ai changelog --base <BASE_BRANCH_OR_COMMIT> --head <HEAD_BRANCH_OR_COMMIT>
+```
+
+### How to Create a Pull Request with AI
+
+When your branch is ready, push it, then run:
+
+```
+gk ai pr create
+```
+
+GitKraken CLI compares your branch with its base branch, writes a pull request title and description, and shows them to you. Confirm to open the pull request on your Git provider.
+
+### How to Choose an AI Model
+
+Every AI command accepts `--model` to use a specific model for that one run. It doesn't change your saved settings:
+
+```
+gk ai commit --model <MODEL_ID>
+```
+
+To see the GitKraken AI models you can use, run:
+
+```
+gk ai models
+```
+
+The default model is marked with `*`. To change the model GitKraken AI uses for every command, run `gk ai provider set gitkraken --model <MODEL_ID>`.
+
+### How to Use Your Own AI Provider
+
+If your team already pays for an AI provider, you can use your own API key with GitKraken CLI. GitKraken CLI supports OpenAI, Anthropic, OpenRouter, and Ollama for local models.
+
+1. Add your provider and choose a model:
+   ```
+   gk ai provider add anthropic --key <API_KEY> --model <MODEL_ID>
+   ```
+2. If GitKraken CLI doesn't make the new provider active automatically, it tells you. To make it active, run:
+   ```
+   gk ai provider use anthropic
+   ```
+3. Check which provider and model are active:
+   ```
+   gk ai provider show
+   ```
+
+To switch back to GitKraken AI without removing your provider, run `gk ai provider use gitkraken`.
+
+When you use your own provider, your AI requests go to that provider and don't use GitKraken AI credits. `gk ai resolve` needs a model that supports tool calling.
+
+### How to Check Your AI Credit Usage
+
+To see how many GitKraken AI tokens you've used, run:
+
+```
+gk ai tokens
+```
+
+When your organization runs out of GitKraken AI credits, AI commands stop and show a message:
+
+- **If you're an organization admin,** the message includes a link to add credits.
+- **If you're an organization member,** ask an organization admin to add credits.
+
+To keep working while you wait, you can switch to your own AI provider.
+
+---
+
+## How to Track Pull Requests and Issues in GitKraken CLI
+
+Source: https://help.gitkraken.com/cli/GK-CLI-pull-requests-and-issues/
+
+With GitKraken CLI, you can check the pull requests waiting on you and the issues assigned to you without opening a browser. One command can show work from every provider you've connected, such as your GitHub pull requests and your Jira tickets together. If you use Launchpad in GitLens or GitKraken Desktop, this gives you a similar view in your terminal.
+
+This page shows you how to list, filter, view, and assign pull requests and issues. For every flag, see the [`gk pr`](https://gitkraken.github.io/gk-cli/docs/gk_pr.html) and [`gk issue`](https://gitkraken.github.io/gk-cli/docs/gk_issue.html) command references.
+
+### Requirements
+
+To list pull requests and issues, you need the following:
+
+- **Account:** sign in with `gk auth login`.
+- **Connected providers:** connect at least one Git provider or issue tracker. To learn how, see [How to Connect Providers in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-providers/).
+
+The following table lists the providers each command supports:
+
+| Command | Supported providers |
+| --- | --- |
+| `gk pr list` | GitHub, GitHub Enterprise, GitLab, GitLab Self-Managed, Bitbucket, Bitbucket Server and Data Center, Azure DevOps |
+| `gk issue list`, `gk issue show`, `gk issue assign` | GitHub, GitHub Enterprise, GitLab, GitLab Self-Managed, Jira, Jira Server and Data Center, Azure DevOps, Linear, Trello |
+
+### How to See Your Pull Requests
+
+To list the open pull requests you authored or are assigned to on one provider, run `gk pr list` with the provider name:
+
+```
+gk pr list github
+```
+
+To see pull requests from every Git provider you've connected, run:
+
+```
+gk pr list --all
+```
+
+Use the following options to change what you see:
+
+- **To include pull requests waiting for your review,** add `--reviewer`.
+- **To see closed and merged pull requests,** add `--closed`.
+- **To see every pull request in one repository,** add `--org <ORG> --repo <REPO> --all-involvement`. For Azure DevOps, also add `--project <PROJECT>`.
+- **To get the latest data,** add `--sync`. GitKraken CLI caches results for a short time, so `--sync` skips the cache.
+
+For Bitbucket and Azure DevOps, GitKraken CLI first looks for the repository in your current folder. Outside a matching repository, it lists your pull requests across your Bitbucket workspaces or Azure DevOps organizations.
+
+To create a pull request from your current branch with an AI-written title and description, see [How to Use AI Features in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-ai-features/).
+
+### How to See Your Issues
+
+To list the open issues assigned to you on one provider, run `gk issue list` with the provider name:
+
+```
+gk issue list jira
+```
+
+To see issues from every issue tracker you've connected, run:
+
+```
+gk issue list --all
+```
+
+Use the following options to filter the list:
+
+- **To see issues assigned to anyone,** add `--all-assignees`.
+- **To see issues with no assignee,** add `--unassigned`.
+- **To see issues assigned to a teammate,** add `--assigned-to <USER>`.
+- **To see closed issues,** add `--closed`.
+- **To filter Jira issues,** add `--project <PROJECT_KEY>` and `--issue-type <TYPE>`, such as `Bug`.
+- **To filter GitHub issues,** add `--org <ORG>` and `--repo <REPO>`.
+
+For example, to list unassigned bugs in a Jira project, run:
+
+```
+gk issue list jira --unassigned --project <PROJECT_KEY> --issue-type Bug
+```
+
+### How to View an Issue
+
+To see the details of one issue, including closed or unassigned issues, run `gk issue show` with the provider and the issue ID. For Jira, Linear, and Trello, the ID or key is enough:
+
+```
+gk issue show jira <ISSUE_KEY> --with-comments
+```
+
+For GitHub and GitLab, add the organization and repository. For Azure DevOps, add the organization and project:
+
+```
+gk issue show github <ISSUE_NUMBER> --organization-name <ORG> --repo-name <REPO>
+```
+
+The `--with-comments` flag adds the issue's comments.
+
+### How to Assign an Issue
+
+To assign an issue to someone, run `gk issue assign` with the provider and the issue ID. For GitHub and GitLab, use the person's username. For Jira and Azure DevOps, use their email:
+
+```
+gk issue assign github -i <ISSUE_NUMBER> -n <USERNAME> -o <ORG> -r <REPO>
+```
+
+### How to Work with More Than One Account
+
+If you connected more than one account for the same provider, GitKraken CLI uses your primary connection by default. To list pull requests or issues for a different connection, add `--connection <TOKEN_ID>`. To find connection IDs, run `gk provider list`. To learn more, see [How to Connect Providers in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-providers/).
+
+To use these lists in scripts, add `--json`. To learn more, see [How to Script GitKraken CLI with JSON Output](https://help.gitkraken.com/cli/GK-CLI-json-output/).
+
+---
+
+## How to Connect Providers in GitKraken CLI
+
+Source: https://help.gitkraken.com/cli/GK-CLI-providers/
+
+GitKraken CLI uses your provider connections to list pull requests and issues, open pull requests, and give AI coding agents access to your work. If you already connected GitHub, Jira, or other integrations in GitKraken Desktop, GitLens, or gitkraken.dev, you can reuse them in the CLI with one command.
+
+This page shows you how to sync, add, and manage provider connections, including self-hosted instances and more than one account per provider. For every flag, see the [`gk provider` command reference](https://gitkraken.github.io/gk-cli/docs/gk_provider.html).
+
+### Requirements
+
+To connect providers, you need the following:
+
+- **Account:** sign in with `gk auth login`.
+- **Organization:** set your organization with `gk organization set <ORG_NAME>` before you sync.
+- **Multiple accounts:** connecting more than one account to the same provider requires a paid plan.
+
+The following table lists the providers GitKraken CLI supports and the name to use in commands:
+
+| Provider | Name in commands | Use for |
+| --- | --- | --- |
+| GitHub | `github` | Pull requests and issues |
+| GitHub Enterprise | `github_enterprise` | Pull requests and issues |
+| GitLab | `gitlab` | Pull requests and issues |
+| GitLab Self-Managed | `gitlab_self_hosted` | Pull requests and issues |
+| Bitbucket | `bitbucket` | Pull requests |
+| Bitbucket Server and Data Center | `bitbucket_server` | Pull requests |
+| Azure DevOps | `azure` | Pull requests and issues |
+| Jira | `jira` | Issues |
+| Jira Server and Data Center | `jira_server` | Issues |
+| Linear | `linear` | Issues |
+| Trello | `trello` | Issues |
+
+### How to Sync Integrations from Your GitKraken Account
+
+If you connected integrations in GitKraken Desktop, GitLens, or gitkraken.dev, sync them to GitKraken CLI:
+
+```
+gk provider list --sync
+```
+
+GitKraken CLI lists each connected provider. Run this command again any time you connect a new integration in another GitKraken product.
+
+### How to Add a Provider
+
+To connect a cloud provider such as GitHub, GitLab, Bitbucket, Azure DevOps, Jira, Linear, or Trello, run `gk provider add` with the provider name:
+
+```
+gk provider add github
+```
+
+GitKraken CLI opens your browser so you can sign in to the provider and approve access.
+
+#### How to Add a Provider with a Personal Access Token
+
+You can connect with a personal access token instead of signing in through your browser. For example:
+
+```
+gk provider add github -t <TOKEN>
+```
+
+Some providers need more details with a token:
+
+- **Jira:** add `--email <EMAIL>` and `--jira-organization <JIRA_ORGANIZATION>`.
+- **Bitbucket:** add `--email <EMAIL>`. Your token needs the `read:pullrequest:bitbucket` and `write:pullrequest:bitbucket` scopes.
+- **Trello:** add `--key <API_KEY>`. A Trello token connection stays on the computer where you add it. To sync Trello across your computers, connect without a token instead.
+- **Azure DevOps:** tokens aren't supported. Connect through your browser instead.
+
+GitKraken CLI checks your token with the provider before it saves it. To skip this check, add `--no-verify`.
+
+#### How to Add a Self-Hosted Provider
+
+To connect GitHub Enterprise, GitLab Self-Managed, Bitbucket Server and Data Center, or Jira Server and Data Center, use a personal access token and your instance URL:
+
+```
+gk provider add gitlab_self_hosted -t <TOKEN> --url <INSTANCE_URL>
+```
+
+### How to Connect More Than One Account to a Provider
+
+If you work with more than one account on the same provider, such as a personal and a work GitHub account, you can connect both. To add another account without replacing the current one, add `--additional`:
+
+```
+gk provider add github --additional
+```
+
+This feature requires a paid plan.
+
+When you have more than one connection, GitKraken CLI uses the primary connection by default. To manage your connections:
+
+1. List your connections and their IDs:
+   ```
+   gk provider list
+   ```
+2. Set the connection you want to use by default:
+   ```
+   gk provider primary github <TOKEN_ID>
+   ```
+
+To use a different connection for one command, add `--connection <TOKEN_ID>` to `gk pr list` or `gk issue list`.
+
+### How to Find Organizations, Projects, and Repositories
+
+Some commands need the name of an organization, project, or repository on your provider. To look these up, use the following commands:
+
+- `gk provider orgs` lists your organizations or workspaces.
+- `gk provider projects` lists projects, such as Azure DevOps projects.
+- `gk provider repos` lists repositories.
+
+For the options each command needs, see the [`gk provider` command reference](https://gitkraken.github.io/gk-cli/docs/gk_provider.html).
+
+### How to Remove a Provider
+
+To remove a provider and all its connections, run:
+
+```
+gk provider remove github
+```
+
+To remove one connection only, add `--connection <TOKEN_ID>`. To skip the confirmation prompt, add `--force`.
+
+> **Note:** As of GitKraken CLI 3.1.74, `--yes` is deprecated. Use `--force` instead.
+
+---
+
+## How to Use GitKraken CLI with AI Coding Agents
+
+Source: https://help.gitkraken.com/cli/gk-cli-mcp/
+
+AI coding agents work better when they can see your pull requests and issues and use Git safely. GitKraken CLI gives agents such as Claude Code, Cursor, GitHub Copilot, and Codex access to GitKraken in two ways:
+
+- **The GitKraken MCP server** gives your agent tools for Git, pull requests, and issues across your connected providers. For example, you can ask your agent "What issues are assigned to me?" or "Create a pull request for this branch."
+- **GitKraken agent skills** teach your agent how to use GitKraken CLI, including its AI commit composer and AI conflict resolution.
+
+This page shows you how to install both, check what's installed, and remove them. If you use GitLens in VS Code, Cursor, Windsurf, Trae, or Kiro, GitLens can install the GitKraken MCP server for you. To learn more, see [How GitKraken CLI Works with GitLens and GitKraken Desktop](https://help.gitkraken.com/cli/GK-CLI-gitlens-and-gitkraken-desktop/).
+
+### Requirements
+
+To give your agent GitKraken tools, you need the following:
+
+- **GitKraken CLI:** install `gk` by following [How to Install and Set Up GitKraken CLI](https://help.gitkraken.com/cli/cli-home/).
+- **Account:** sign in with `gk auth login`. Most GitKraken MCP tools need you to be signed in.
+- **Connected providers:** connect the Git providers and issue trackers you want your agent to use. To learn how, see [How to Connect Providers in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-providers/).
+
+The following table lists the AI tools GitKraken CLI supports and the name to use in commands:
+
+| AI tool | MCP server name | Agent skills name |
+| --- | --- | --- |
+| Claude Code | `claude-cli` | `claude-cli` |
+| Claude Desktop | `claude` | Not supported |
+| Cursor | `cursor` | `cursor` |
+| VS Code | `vscode` | Not supported |
+| VS Code Insiders | `vscode-insiders` | Not supported |
+| GitHub Copilot CLI | `copilot` | `copilot` |
+| JetBrains Copilot | `jetbrains-copilot` | Not supported |
+| Codex | `codex` | `codex` |
+| Windsurf | `windsurf` | Not supported |
+| Trae | `trae` | Not supported |
+| Kiro | `kiro` | Not supported |
+| Zed | `zed` | Not supported |
+| OpenCode | `opencode` | `opencode` |
+| Antigravity | `antigravity` | `antigravity` |
+| Antigravity CLI | `antigravity-cli` | `antigravity-cli` |
+| Augment | Not supported | `augment` |
+| Grok Build | Not supported | `grok` |
+| Pi | Not supported | `pi` |
+
+### How to Install the GitKraken MCP Server
+
+To install the GitKraken MCP server in an AI tool, run `gk mcp install` with the tool's name. For example, for Claude Code:
+
+```
+gk mcp install claude-cli
+```
+
+GitKraken CLI adds a **GitKraken** entry to the tool's MCP settings. The next time your agent starts, it can use GitKraken tools.
+
+You can also install the server in more than one tool at once:
+
+- **To install in several tools,** list their names, for example `gk mcp install cursor claude-cli`.
+- **To install in every AI tool on your computer,** run `gk mcp install --all`.
+- **To see which tools GitKraken CLI supports and finds on your computer,** run `gk mcp install --list`.
+
+If the GitKraken entry is already up to date, GitKraken CLI leaves it alone. If the entry is out of date, for example because `gk` moved, GitKraken CLI repairs it.
+
+#### How to Limit Your Agent to Read-Only Tools
+
+If you want your agent to read your repositories, pull requests, and issues without making changes, install the server in read-only mode:
+
+```
+gk mcp install claude-cli --readonly
+```
+
+In read-only mode, the server doesn't offer tools that commit, push, create pull requests, or create issues. To turn read-only mode off later, run the install again with `--readonly=false`.
+
+To learn about every GitKraken MCP tool and how to use it, see the [GitKraken MCP documentation](https://help.gitkraken.com/mcp/mcp-getting-started/).
+
+### How to Install GitKraken Agent Skills
+
+Agent skills are instructions that your AI agent loads when a task needs them. GitKraken CLI includes the following skills:
+
+- **gitkraken-cli:** helps your agent sign in, connect providers, list pull requests and issues, and write commit messages, changelogs, and pull request descriptions with `gk`.
+- **gitkraken-commit-composer:** helps your agent turn mixed changes into clean commits with `gk ai compose`.
+- **gitkraken-resolve:** helps your agent resolve merge conflicts with `gk ai resolve`.
+
+To install all three skills for an AI tool, run `gk ai skill install` with the tool's name. For example, for Claude Code:
+
+```
+gk ai skill install claude-cli
+```
+
+To install only one skill, add `--skill <SKILL_NAME>`. To install skills in every AI tool on your computer, add `--all`.
+
+By default, GitKraken CLI installs skills for your user account, so they work in every project. To add the skills to the current repository instead, so you can commit them and share them with your teammates, add `--scope project`.
+
+When you update GitKraken CLI, update your installed skills to match:
+
+```
+gk ai skill update --all
+```
+
+To check whether your skills are current, run `gk ai skill check <TOOL_NAME>`. GitKraken CLI never overwrites a skill file you edited unless you add `--force`.
+
+### How to Check What's Installed
+
+To see every AI agent GitKraken CLI knows about, run:
+
+```
+gk agents list
+```
+
+For each agent, the list shows whether it's on your computer, whether the GitKraken MCP server is installed, and whether GitKraken AI hooks are installed. To see only skills, run `gk ai skill list`.
+
+### How to Remove the GitKraken MCP Server and Skills
+
+To remove the GitKraken MCP server from an AI tool, run:
+
+```
+gk mcp uninstall claude-cli
+```
+
+To remove it from every AI tool, run `gk mcp uninstall --all`.
+
+To remove GitKraken agent skills, run:
+
+```
+gk ai skill uninstall claude-cli
+```
+
+> **Note:** As of GitKraken CLI 3.1.75, you can no longer install the GitKraken MCP server in Gemini CLI. To remove an earlier install, run `gk mcp uninstall gemini`.
+
+For every option, see the [`gk mcp`](https://gitkraken.github.io/gk-cli/docs/gk_mcp.html) and [`gk ai skill`](https://gitkraken.github.io/gk-cli/docs/gk_ai_skill.html) command references.
+
+---
+
+## How to Script GitKraken CLI with JSON Output
+
+Source: https://help.gitkraken.com/cli/GK-CLI-json-output/
+
+GitKraken CLI can print machine-readable JSON, so you can use it in shell scripts, CI jobs, and AI agent workflows. For example, you can post your open pull requests to a team channel each morning, or let an agent read your assigned issues without parsing text tables.
+
+This page explains how JSON output, errors, and exit codes work so your scripts can rely on them.
+
+### Requirements
+
+To script GitKraken CLI, you need the following:
+
+- **GitKraken CLI 3.1.75 or later:** `--json` became a global flag in 3.1.75. To check your version, run `gk version`.
+- **Account:** most commands that read from your providers need you to sign in with `gk auth login`.
+- **A JSON tool (optional):** the examples on this page use [jq](https://jqlang.org/) to read JSON.
+
+### How to Get JSON Output
+
+Add `--json` to a command to print a single JSON document:
+
+```
+gk pr list --all --json
+```
+
+To turn on JSON output for every command in your terminal session or CI job, set the `GK_OUTPUT` environment variable to `json`.
+
+In JSON mode, GitKraken CLI prints only the JSON document to standard output (stdout). Warnings, progress messages, and other human-readable text go to standard error (stderr). This means you can pipe the output straight into another tool:
+
+```
+gk issue list jira --json | jq .
+```
+
+GitKraken CLI doesn't print color codes in JSON mode, or when the output isn't going to a terminal.
+
+> **Note:** As of GitKraken CLI 3.1.75, `--output json` is deprecated. Use `--json` instead.
+
+### How to Keep Only the Fields You Need
+
+List commands, such as `gk pr list`, `gk issue list`, and `gk ai skill list`, accept `--fields` to keep only the fields you name. This keeps the output small, which saves context when an AI agent reads it:
+
+```
+gk pr list github --json --fields id,title,state
+```
+
+The `--fields` flag works only with `--json`. GitKraken CLI drops an unknown field name with a warning. If every field name is unknown, the command fails and lists the valid field names.
+
+### How to Handle Errors and Exit Codes
+
+GitKraken CLI uses the following exit codes so your scripts know whether to retry:
+
+| Exit code | Meaning | What to do |
+| --- | --- | --- |
+| `0` | Success | Continue. |
+| `1` | Permanent failure, such as a sign-in, validation, or internal error | Fix the problem. Don't retry the same command. |
+| `75` | Temporary failure, such as a network error or timeout | Retry the command. |
+
+In JSON mode, an error prints a single JSON object to stderr, and stdout stays empty. The object includes an error `code`, a `message`, and a `retryable` value. The following error codes are the most useful in scripts:
+
+- `auth_required`: your sign-in is missing or expired. Run `gk auth login`, then try again.
+- `credits_exhausted`: your organization is out of GitKraken AI credits. The message explains how to add credits or who to contact.
+- `invalid_request`: the command or its input is invalid. Fix the command before you run it again.
+
+When GitKraken CLI runs another program for you, it exits with that program's exit code instead.
+
+### How to Spot Deprecated Commands in Scripts
+
+When you run a deprecated command, GitKraken CLI prints a warning to stderr. In JSON mode, it adds a top-level `deprecation` field to the JSON result instead. Check for this field in your scripts so you can update them before the command is removed.
+
+### How to Preview Changes Before You Make Them
+
+Some commands that change things accept `--dry-run`. With `--dry-run`, GitKraken CLI checks the command and shows what it would do without doing it. For example:
+
+```
+gk ai skill install claude-cli --dry-run
+```
+
+### How to Run Separate Sessions
+
+By default, GitKraken CLI shares one sign-in and cache across your terminal sessions. To keep a separate sign-in and cache, for example for a CI job or a different GitKraken account, add `--session <NAME>` to each command:
+
+```
+gk auth login --session ci
+gk pr list --all --json --session ci
+```
+
+To turn off telemetry in scripts and CI, see [GitKraken CLI Security and Data Storage Information](https://help.gitkraken.com/cli/CLI-Security/).
+
+---
+
+## How to Manage Work Items in GitKraken CLI
 
 Source: https://help.gitkraken.com/cli/GK-CLI-work-items/
-Last updated: March 2026
 
-GitKraken CLI Work Items let developers and agents start, review, commit, create pull requests for, and clean up a task across every repository in the active workspace. Use this workflow when one issue affects multiple repositories; AI-generated commits and pull requests require authentication, a configured organization, and a paid plan.
+> **Deprecated:** As of GitKraken CLI 3.1.76, the `gk work` and `gk workspace` commands are deprecated and will be removed in a future release. They still work, but each command prints a deprecation warning. There's no direct replacement. For single-repository work, use standard Git commands with the [GitKraken CLI AI features](https://help.gitkraken.com/cli/GK-CLI-ai-features/), such as `gk ai commit` and `gk ai pr create`.
 
-Requirements:
-- Workspace: an active GitKraken workspace with the target repositories
-- Plan support: Work Items can be used on all plans, but AI-assisted actions require a paid plan
-- Authentication: `gk auth login` is required for GitKraken cloud features
-- Organization: `gk organization set <ORG_NAME>` is required for AI-generated commits and pull requests
-- Scope: `gk work` commands run across every repository in the active workspace
+A work item is a task, such as a bug fix or feature, that spans more than one repository in your GitKraken workspace. With `gk work`, you can start the task, review changes, commit, open pull requests, and clean up in every repository at once, instead of repeating each step in each repository.
 
-| Command | Use when | Requires AI or auth | Output |
+### Requirements
+
+To use work items, you need the following:
+
+- **Workspace:** an active GitKraken workspace that contains the repositories you're working in.
+- **Plan:** you can use work items on any plan. AI-assisted actions require a paid plan.
+- **Account:** sign in with `gk auth login` to use GitKraken cloud features.
+- **Organization:** set an organization with `gk organization set <ORG_NAME>` to generate commits and pull requests with AI.
+- **Scope:** every `gk work` command runs in every repository in the active workspace.
+
+The following table summarizes the work item commands:
+
+| Command | Use it to | Needs AI or sign-in | Result |
 | --- | --- | --- | --- |
-| `gk work start <name>` | Start a coordinated task across multiple repositories | No | Initializes the work item across the workspace |
-| `gk work info` | Review pending changes before committing or opening pull requests | No | Shows work item state across repositories |
-| `gk work commit --ai` | Create commits across repositories with AI-generated messages | Yes, plus a paid plan | Commits staged changes in all affected repositories |
-| `gk work pr create --ai` | Open pull requests for the current work item | Yes, plus a paid plan | Creates pull requests for all changes in scope |
-| `gk work end` | Finish the work item and clean up temporary resources | No | Closes the work item and offers cleanup options |
+| `gk work start <name>` | Start a task across multiple repositories | No | Creates the work item across the workspace |
+| `gk work info` | Review pending changes before you commit or open pull requests | No | Shows the work item's state in each repository |
+| `gk work commit --ai` | Commit in each repository with AI-generated messages | Yes, and a paid plan | Commits staged changes in each affected repository |
+| `gk work pr create --ai` | Open pull requests for the work item | Yes, and a paid plan | Creates pull requests for every repository with changes |
+| `gk work end` | Finish the work item and clean up | No | Closes the work item and offers cleanup options |
 
-### Quick Start
+For every option, see the [`gk work` command reference](https://gitkraken.github.io/gk-cli/docs/gk_work.html).
 
-Use this Quick Start when you want the shortest path through a multi-repository task. The detailed command-by-command walkthrough appears later on this page.
+### When to Use GitKraken CLI Work Items Instead of Standard Git Commands
+
+Use `gk work` when one issue, bug fix, or feature spans multiple repositories in the same workspace. If your work stays in one repository and you don't need matching commits, pull requests, or cleanup across repositories, use standard Git commands instead.
+
+### How to Start a GitKraken CLI Work Item Quickly
+
+Follow these steps for the shortest path through a multi-repository task. The next section explains each command in detail.
 
 1. Start a new work item:
    ```
    gk work start <name>
    ```
-2. Review pending changes across all repositories in the workspace:
+2. Review pending changes in every repository in the workspace:
    ```
    gk work info
    ```
-3. Stage your changes, then commit with an AI-generated message:
+3. Stage your changes with `git add`, then commit with an AI-generated message:
    ```
    gk work commit --ai
    ```
-4. Create pull requests for all repositories in the work item:
+4. Create pull requests for every repository in the work item:
    ```
    gk work pr create --ai
    ```
-5. Finalize and clean up the work item:
+5. Finish and clean up the work item:
    ```
    gk work end
    ```
 
-All `gk work` commands execute in parallel across every repository in the active workspace. An authenticated GitKraken account with a configured organization and paid plan is required to use AI-generated commit messages and pull requests.
-
-### When to Use GitKraken CLI Work Items Instead of Standard Git Commands
-
-Use `gk work` when one issue, bug fix, or feature spans multiple repositories in the same workspace. Use standard Git commands instead when the work stays in a single repository and you do not need synchronized commits, pull requests, or cleanup.
+Every `gk work` command runs in parallel in every repository in the active workspace. To generate commit messages and pull requests with AI, you need to be signed in, have an organization set, and have a paid plan.
 
 ### How to Run a GitKraken CLI Work Item from Start to Finish
 
-Start with `gk work start` when you want GitKraken CLI to initialize a shared task across every repository in the active workspace:
+To create a task that spans every repository in the active workspace, run `gk work start`:
 
 ```
 gk work start <name>
 ```
 
-The `<name>` assigns a title to the work item. This initializes all repositories in your workspace and checks for any pending commits, pull requests, or open work items.
+The `<name>` is the title of your work item. GitKraken CLI sets up each repository in your workspace and checks for **pending commits, pull requests, or open work items**.
 
-Review the workspace state with `gk work info` before committing or opening pull requests across the full work item:
+Before you commit or open pull requests, review the state of the work item with `gk work info`:
 
 ```
 gk work info
@@ -244,72 +1092,147 @@ gk work info
 
 #### How to Commit Work Item Changes with AI
 
-Use `gk work commit --ai` when you want GitKraken CLI to generate commit messages and commit staged changes across every repository in the work item:
+To generate commit messages and commit your staged changes in each repository of the work item, run:
 
 ```
 gk work commit --ai
 ```
 
-This command:
-- Analyzes staged changes using AI.
-- Generates context-aware commit messages.
-- Commits changes across all repositories in the work item.
+This command does the following:
+
+* Analyzes your staged changes with AI.
+* Writes a commit message that fits each change.
+* Commits the changes in each repository in the work item.
+
+To choose the AI model for one run, add `--model <MODEL_ID>`. To learn more about models, see [How to Use AI Features in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-ai-features/).
 
 #### How to Create Pull Requests for a Work Item with AI
 
-Use `gk work pr create --ai` when you want GitKraken CLI to open pull requests for every repository included in the active work item:
+To open pull requests for every repository in the active work item, run:
 
 ```
 gk work pr create --ai
 ```
 
-This creates pull requests for all changes in the current work item with AI-generated messages. Use this command after you have reviewed the workspace state and committed the repositories that belong in the shared task.
+GitKraken CLI creates a pull request with an AI-generated title and description for each repository that has changes in the work item. Run this command after you review the work item and commit your changes.
 
 #### How to End and Clean Up a Work Item
 
-Use `gk work end` when the shared task is complete and you want GitKraken CLI to close the work item and clean up temporary resources:
+When the task is complete, close the work item and clean up its temporary resources:
 
 ```
 gk work end
 ```
 
-Cleans up the workspace and provides options to delete or retain local changes while removing temporary resources.
+GitKraken CLI asks whether to delete or keep your local changes, then removes the work item's temporary resources.
 
 ---
 
-## Support Terms and Conditions
+## GitKraken CLI Security and Data Storage Information
+
+Source: https://help.gitkraken.com/cli/CLI-Security/
+
+This page explains what data GitKraken CLI cloud services store, how GitKraken encrypts that data in transit and at rest, and where GitKraken hosts it. It also covers what GitKraken CLI keeps only on your computer and how to turn off telemetry. Use this page if you're a developer, admin, or security reviewer evaluating GitKraken CLI.
+
+### Requirements and scope
+
+This page covers the following:
+
+- **Product scope:** GitKraken CLI features that connect to GitKraken cloud services, plus data GitKraken CLI stores on your computer.
+- **Out of scope:** local Git commands that don't use GitKraken cloud features.
+- **Audience:** developers, admins, and security reviewers.
+- **Security focus:** the data collected, encryption in transit, storage location, and encryption at rest.
+
+### What GitKraken CLI cloud services store
+
+The following table lists each GitKraken cloud service, the data it stores, and how GitKraken protects that data. All services encrypt data in transit with Transport Layer Security (TLS) and encrypt data at rest with the Advanced Encryption Standard (AES) using 256-bit keys.
+
+| Service | Data collected | Security in transit | Storage location | Security at rest |
+| --- | --- | --- | --- | --- |
+| Workspaces and Insights | Repository metadata, issues, and pull requests | Encrypted with TLS | MongoDB Atlas | Encrypted with AES-256 |
+| Teams and users | Repository-relative file paths, number of lines changed, name of the checked-out branch, and first commit SHA of the repository | Encrypted with TLS | MongoDB Atlas | Encrypted with AES-256 |
+| Subscriptions | Billing metadata such as last four digits, name, payment type, ZIP code, country, and card type | Encrypted with TLS | MongoDB Atlas | Encrypted with AES-256 |
+| Launchpad | Metadata for issues, pull requests, and URLs | Encrypted with TLS | Postgres (Amazon RDS) | Encrypted with AES-256 |
+| Cloud Patches | Patch metadata, such as repository, provider, and base branch, plus patch content | Encrypted with TLS | Metadata in Postgres, content in Amazon S3 | Encrypted with AES-256 (Amazon S3 server-side encryption, SSE-S3) |
+
+### What GitKraken CLI keeps on your computer
+
+Some GitKraken CLI data never leaves your computer:
+
+- **AI agent session data:** when you install AI hooks for an agent such as Claude Code, GitKraken CLI saves each agent session in a local cache on your computer. It passes session updates only to GitKraken apps, such as GitKraken Desktop, GitLens, and Kepler, running on the same computer. Session data can include your prompts, the tools the agent uses and their arguments, and the files the agent changes. GitKraken CLI removes ended sessions from the cache after 30 days.
+- **Saved AI plans:** when you save a plan from `gk ai compose` or `gk ai resolve` to a file, the file can contain source code. On macOS and Linux, GitKraken CLI creates it so only your user account can read it. Delete these files when you no longer need them.
+
+### Where AI requests go
+
+By default, GitKraken CLI sends AI requests to GitKraken AI. If you add your own provider with `gk ai provider add`, such as OpenAI, Anthropic, OpenRouter, or a local Ollama model, GitKraken CLI sends your AI requests to that provider with your API key. GitKraken CLI still downloads its prompt templates from GitKraken, so you need to stay signed in. To learn more, see [How to Use AI Features in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-ai-features/).
+
+### How to Turn Off GitKraken CLI Telemetry
+
+GitKraken CLI sends usage telemetry and error reports to GitKraken to help improve the product. You can turn this off in any of the following ways:
+
+- To turn off telemetry for one command, add the `--no-telemetry` flag:
+  ```
+  gk pr list github --no-telemetry
+  ```
+- To turn off telemetry for every command, set the `GK_CLI_NO_TELEMETRY` environment variable to `1` or `true`.
+- To use the OpenTelemetry standard setting, set the `OTEL_SDK_DISABLED` environment variable to `true`.
+
+---
+
+## GitKraken CLI Support Terms and Conditions
 
 Source: https://help.gitkraken.com/cli/CLI-terms-and-conditions/
 
-Support requests should be submitted at: https://help.gitkraken.com/cli/cli-contact-support/
+GitKraken CLI support terms and conditions explain how to contact support, which plans include guaranteed response times, and how release support and end-of-life are handled. This reference is for GitKraken CLI customers who need support-hour, response-time, and lifecycle details.
 
-### Support Plans and Response Times
+You can always reach out to us using [Contact support](https://help.gitkraken.com/cli/cli-contact-support/?product_s_=GitKraken%20CLI).
+
+### How to Contact GitKraken CLI Support
+
+- Submit GitKraken CLI support requests at [Contact support](https://help.gitkraken.com/cli/cli-contact-support/?product_s_=GitKraken%20CLI). Support works with you mainly by email. Support may also use other services, such as phone calls and screen sharing, to deliver Support Services.
+
+- Community includes community support only. Pro, Advanced, Business, and Enterprise include guaranteed support response times during Support Hours.
+
+- Support Hours are 10:00 am to 10:00 pm, Monday to Friday, UTC. Users can submit support requests at any time, but responses and support interactions are provided during Support Hours only. The following table lists the response times for each plan during Support Hours:
 
 | Plan | Guaranteed support | Response time during support hours | Notes |
-| --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | Community | No | Not guaranteed | Community support only |
 | Pro | Yes | 3 business days | Standard support during stated support hours |
 | Advanced | Yes | 1 business day | Priority support during stated support hours |
 | Business | Yes | 12 hours | Priority support during stated support hours |
 | Enterprise | Yes | 6 hours | Enterprise support during stated support hours |
 
-Support Hours: 10:00 am to 10:00 pm, Monday to Friday, UTC.
+- While GitKraken tries to respond to everyone who reaches out, a response is not guaranteed for all users. This includes users on Student and Community plans. GitKraken encourages all users to engage in the community and use self-service resources. [Additional Resources](https://help.gitkraken.com/gitkraken-desktop/gitkraken-desktop-home/#additional-resources)
 
-Student and Community plan users are encouraged to use self-service resources and the GitKraken community.
+- GitKraken CLI is available for Windows, macOS, and Linux. To find the current supported versions, see the [installation instructions](https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli).
 
-### Support Period
+#### How Long GitKraken CLI Releases Are Supported
 
-GitKraken supports Generally Available (GA) releases. Fixes are provided via new releases on top of the latest major/minor branch. Versioning follows X.Y.Z — X is major, Y is minor, Z is patch. Customers are expected to stay on the current release for optimal support.
+GitKraken supports Generally Available (GA) releases of products. Eligible code fixes and hot fixes are provided through a new release (Z) on top of the latest major release and minor release branch. A major release is identified by a change in the first digit (X), and a minor release is identified by a change in the second digit (Y), using versioning in the format `X.Y.Z`.
 
-### End-of-Life Policy
+As a best practice, customers should stay on the current release to receive optimal support. Release updates are published regularly on the GitKraken Help Center for each GitKraken product. GitKraken may ask customers using an older GA release to upgrade during troubleshooting so they can receive functionality enhancements, security updates, and code fixes.
 
-Major releases are supported for at least 12 months from the major release date. GitKraken provides at least 60 days' prior notice before discontinuing any product or feature. After the End of Life period, support obligations end.
+#### What Happens at End of Life
 
-EoL guidelines:
-- Advance notice of at least 60 days for major features or products.
-- Viable alternatives provided when retiring functionality.
-- Continued support until the retirement date.
+GitKraken supports a major release for at least 12 months from that major release, excluding minor and patch releases. For example, version `9.Y.Z` is eligible for support for 12 months from the release of version `9.0.x`. During troubleshooting, GitKraken may ask a customer to upgrade to the current release.
 
-GitKraken may accelerate EoL timelines for security or platform integrity reasons. Third-party integrations may also be retired due to third-party decisions.
+GitKraken's end-of-life policy provides that GitKraken will provide customers with at least sixty (60) days' prior notice before discontinuing any product. After the End of Life Period expires, GitKraken will no longer be obligated to provide support services for the terminated software.
 
-See also: https://www.gitkraken.com/eula | https://www.gitkraken.com/privacy
+##### End-of-Life (EoL) Process
+
+The decision to retire or deprecate features follows a process that considers demand, usage, the impact of feature retirement, and customer feedback. GitKraken aims to invest resources in the areas that add the most value for the most customers and to communicate product changes clearly and proactively.
+
+To that end, we will do our best to follow these guidelines when retiring functionality:
+
+- Advance notice: For the EoL of major features or products, we will attempt to notify customers at least 60 (sixty) days in advance.
+- Viable alternatives: GitKraken will strive to provide viable alternatives to our customers when retiring functionality. These may be alternative offerings from GitKraken or recommended alternatives from third-party providers. Where possible and appropriate, GitKraken will automatically migrate customers to alternatives for retired functionality.
+- Continued support: GitKraken commits to providing continued support for functionality until its retirement date.
+
+We may need to accelerate the timeline for EoL of functionality in extenuating circumstances, such as essential changes necessary to protect the integrity of our platform or the security of our customers and others. In these cases, it is important that those changes occur as quickly as possible.
+
+Similarly, integrated third-party software or services may need to be retired due to the third-party decision to change or retire their solution. In these situations, the pace of retirement will be out of our control.
+
+However, even under these circumstances, we will provide as much advance notice as possible.
+
+Visit the [EULA](https://www.gitkraken.com/eula) and [Privacy Policy](https://www.gitkraken.com/privacy) pages for more information.

@@ -1,14 +1,22 @@
 # GitKraken CLI
 
-> GitKraken CLI (`gk`) is the command-line tool for GitKraken workspaces, providers, and AI-assisted workflows. Available on macOS, Windows, Linux, and Unix systems.
+> GitKraken CLI (`gk`) brings GitKraken to your terminal: AI commits, commit composing, AI conflict resolution, pull requests and issues across providers, and GitKraken tools for AI coding agents. GitLens and GitKraken Desktop also use it behind the scenes. Available on macOS, Windows, Linux, and Unix systems.
 
 ## Documentation
 
-- [How to Install and Set Up GitKraken CLI](https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli): Install via Homebrew, Snap, Winget, or binary, then continue to the setup section at `#how-to-start-using-gitkraken-cli-after-installation` to authenticate with `gk auth login`, set an organization, sync providers, and load repositories into a workspace. Basic setup is available on all plans; AI-powered features require a paid plan.
-- [How to Manage Work Items in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-work-items/): Manage multi-repository work with `gk work`. Work Items are available on all plans; AI-assisted actions such as `gk work commit --ai` and `gk work pr create --ai` require authentication, an active organization, and a paid plan.
-- [GitKraken CLI Support Terms, Response Times, and Lifecycle Policy](https://help.gitkraken.com/cli/CLI-terms-and-conditions/): Support response times for Community, Pro, Advanced, Business, and Enterprise; support hours; GA release support; end-of-life policy; and links to the EULA and Privacy Policy.
+- [How to Install and Set Up GitKraken CLI](https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli): Install with Homebrew, Winget, Snap, npm, or a binary, then continue to the setup section at `#how-to-start-using-gitkraken-cli-after-installation` to sign in with `gk auth login`, set an organization, sync providers, and check your setup with `gk whoami`. Basic setup is available on all plans; AI-powered features require a paid plan.
+- [How GitKraken CLI Works with GitLens and GitKraken Desktop](https://help.gitkraken.com/cli/GK-CLI-gitlens-and-gitkraken-desktop/): How GitLens uses `gk` to run the GitKraken MCP server, how GitKraken Desktop, GitLens, and Kepler use AI agent hooks to show live agent sessions, what data hooks use (local only), and how to check or turn off each connection.
+- [How to Use AI Features in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-ai-features/): Write commit messages with `gk ai commit`, turn mixed changes into clean commits with `gk ai compose`, resolve merge conflicts with `gk ai resolve`, explain branches, write changelogs, create pull requests, choose a model, use your own AI provider, and check AI credits.
+- [How to Track Pull Requests and Issues in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-pull-requests-and-issues/): List, filter, view, and assign pull requests and issues across GitHub, GitLab, Bitbucket, Azure DevOps, Jira, Linear, and Trello with `gk pr list` and `gk issue`.
+- [How to Connect Providers in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-providers/): Sync integrations from your GitKraken account, add providers with OAuth or a personal access token, connect self-hosted instances, and manage more than one account per provider.
+- [How to Use GitKraken CLI with AI Coding Agents](https://help.gitkraken.com/cli/gk-cli-mcp/): Install the GitKraken MCP server with `gk mcp install` and GitKraken agent skills with `gk ai skill install` for Claude Code, Cursor, GitHub Copilot, Codex, and other AI tools, and check status with `gk agents list`.
+- [How to Script GitKraken CLI with JSON Output](https://help.gitkraken.com/cli/GK-CLI-json-output/): Use `--json`, `--fields`, structured errors, exit codes 0/1/75, `--dry-run`, and `--session` in scripts, CI, and agent workflows.
+- [How to Manage Work Items in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-work-items/): Deprecated as of GitKraken CLI 3.1.76. Manage multi-repository work with `gk work`. AI-assisted actions such as `gk work commit --ai` and `gk work pr create --ai` require authentication, an active organization, and a paid plan.
+- [GitKraken CLI Security and Data Storage Information](https://help.gitkraken.com/cli/CLI-Security/): What GitKraken CLI cloud services store, encryption in transit and at rest, data kept on your computer, where AI requests go, and how to turn off telemetry.
+- [GitKraken CLI Support Terms and Conditions](https://help.gitkraken.com/cli/CLI-terms-and-conditions/): Support response times for Community, Pro, Advanced, Business, and Enterprise; support hours; GA release support; end-of-life policy; and links to the EULA and Privacy Policy.
 
 ## Optional
 
 - [Full CLI Command Reference](https://gitkraken.github.io/gk-cli/docs/gk.html): Complete reference for all `gk` CLI commands.
 - [GitHub Releases](https://github.com/gitkraken/gk-cli/releases/latest): Latest binaries and release notes for all platforms.
+- [GitKraken MCP Documentation](https://help.gitkraken.com/mcp/mcp-getting-started/): Full documentation for the GitKraken MCP server and its tools.
