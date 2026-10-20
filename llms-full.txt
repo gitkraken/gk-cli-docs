@@ -67,7 +67,6 @@ To use AI-powered features, such as commit message generation and pull request c
 ### Where to Find GitKraken CLI Documentation
 
 This Help Center explains what you can do with GitKraken CLI and how to use it in real workflows. Start with the [installation instructions](https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli) and the [setup steps](https://help.gitkraken.com/cli/cli-home/#how-to-start-using-gitkraken-cli-after-installation) on this page. For every command and flag, see the [GitKraken CLI command reference](https://gitkraken.github.io/gk-cli/docs/gk.html).
-
 ### How to Install GitKraken CLI
 
 Use a package manager for the simplest install and automatic updates. Use the downloadable binary for a manual or portable install, or when you can't use a package manager.
@@ -225,25 +224,6 @@ gk provider add <PROVIDER>
 ```
 
 To see the available options, run `gk provider add --help`. To connect a self-hosted instance or more than one account, see [How to Connect Providers in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-providers/).
-
-#### How to Load Repositories Into a GitKraken Workspace
-
-> **Note:** As of GitKraken CLI 3.1.76, the `gk workspace` commands are deprecated and will be removed in a future release. They still work, but each command prints a deprecation warning.
-
-To work with an existing GitKraken workspace from the CLI:
-
-1. List your workspaces:
-   ```
-   gk workspace list
-   ```
-2. Set the workspace you want to use:
-   ```
-   gk workspace set <NAME>
-   ```
-3. Clone the workspace repositories into a local folder (`gk ws` is short for `gk workspace`):
-   ```
-   gk ws clone <name> <root-path>
-   ```
 
 ### What to Do Next
 
@@ -958,8 +938,6 @@ gk issue list jira --json | jq .
 
 GitKraken CLI doesn't print color codes in JSON mode, or when the output isn't going to a terminal.
 
-> **Note:** As of GitKraken CLI 3.1.75, `--output json` is deprecated. Use `--json` instead.
-
 ### How to Keep Only the Fields You Need
 
 List commands, such as `gk pr list`, `gk issue list`, and `gk ai skill list`, accept `--fields` to keep only the fields you name. This keeps the output small, which saves context when an AI agent reads it:
@@ -1013,11 +991,15 @@ To turn off telemetry in scripts and CI, see [GitKraken CLI Security and Data St
 
 ---
 
-## How to Manage Work Items in GitKraken CLI
+## Work Items in GitKraken CLI (Legacy)
 
 Source: https://help.gitkraken.com/cli/GK-CLI-work-items/
 
-> **Deprecated:** As of GitKraken CLI 3.1.76, the `gk work` and `gk workspace` commands are deprecated and will be removed in a future release. They still work, but each command prints a deprecation warning. There's no direct replacement. For single-repository work, use standard Git commands with the [GitKraken CLI AI features](https://help.gitkraken.com/cli/GK-CLI-ai-features/), such as `gk ai commit` and `gk ai pr create`.
+> **Legacy page:** Newer versions of GitKraken CLI don't include the `gk work` and `gk workspace` commands, and no other commands replace them. This page describes how they worked in earlier versions.
+>
+> For work in a single repository, use standard Git commands with the [GitKraken CLI AI features](https://help.gitkraken.com/cli/GK-CLI-ai-features/), such as `gk ai commit` and `gk ai pr create`.
+
+### How Work Items Worked in Earlier Versions
 
 A work item is a task, such as a bug fix or feature, that spans more than one repository in your GitKraken workspace. With `gk work`, you can start the task, review changes, commit, open pull requests, and clean up in every repository at once, instead of repeating each step in each repository.
 
