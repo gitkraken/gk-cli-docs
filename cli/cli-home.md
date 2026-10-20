@@ -78,7 +78,6 @@ To use AI-powered features, such as commit message generation and pull request c
 ## Where to Find GitKraken CLI Documentation
 
 This Help Center explains what you can do with GitKraken CLI and how to use it in real workflows. Start with the [installation instructions](https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli) and the [setup steps](https://help.gitkraken.com/cli/cli-home/#how-to-start-using-gitkraken-cli-after-installation) on this page. For every command and flag, see the [GitKraken CLI command reference](https://gitkraken.github.io/gk-cli/docs/gk.html).
-
 ***
 
 ## How to Install GitKraken CLI
