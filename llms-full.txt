@@ -957,8 +957,6 @@ gk issue list jira --json | jq .
 
 GitKraken CLI doesn't print color codes in JSON mode, or when the output isn't going to a terminal.
 
-> **Note:** As of GitKraken CLI 3.1.75, `--output json` is deprecated. Use `--json` instead.
-
 ### How to Keep Only the Fields You Need
 
 List commands, such as `gk pr list`, `gk issue list`, and `gk ai skill list`, accept `--fields` to keep only the fields you name. This keeps the output small, which saves context when an AI agent reads it:
