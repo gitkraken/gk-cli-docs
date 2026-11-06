@@ -10,6 +10,12 @@ status: "GA"
 last_verified: "2026-10"
 taxonomy:
     category: cli
+custom_fields:
+    nav_category: "gk-cli-providers"
+    nav_label: "How to Connect Providers in GitKraken CLI"
+    nav_order: 50
+    nav_parent: ""
+    page_type: "content"
 ---
 
 <kbd>Last updated: October 2026</kbd>

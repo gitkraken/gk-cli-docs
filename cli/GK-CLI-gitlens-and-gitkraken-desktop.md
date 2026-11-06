@@ -10,6 +10,12 @@ status: "GA"
 last_verified: "2026-10"
 taxonomy:
     category: cli
+custom_fields:
+    nav_category: "gk-cli-gitlens-and-gitkraken-desktop"
+    nav_label: "How GitKraken CLI Works with GitLens and GitKraken Desktop"
+    nav_order: 20
+    nav_parent: ""
+    page_type: "content"
 ---
 
 <kbd>Last updated: October 2026</kbd>

@@ -10,6 +10,12 @@ status: "GA"
 last_verified: "2026-10"
 taxonomy:
     category: cli
+custom_fields:
+    nav_category: "cli-home"
+    nav_label: "How to Install and Set Up GitKraken CLI"
+    nav_order: 10
+    nav_parent: ""
+    page_type: "main-index"
 ---
 
 <kbd>Last updated: October 2026</kbd>

@@ -10,6 +10,12 @@ status: "GA"
 last_verified: "2026-10"
 taxonomy:
     category: cli
+custom_fields:
+    nav_category: "cli-terms-and-conditions"
+    nav_label: "GitKraken CLI Support Terms and Conditions"
+    nav_order: 100
+    nav_parent: ""
+    page_type: "content"
 ---
 
 <kbd>Last updated: October 2026</kbd>
