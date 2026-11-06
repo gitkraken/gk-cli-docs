@@ -10,6 +10,12 @@ status: "GA"
 last_verified: "2026-10"
 taxonomy:
     category: cli
+custom_fields:
+    nav_category: "gk-cli-ai-features"
+    nav_label: "How to Use AI Features in GitKraken CLI"
+    nav_order: 30
+    nav_parent: ""
+    page_type: "content"
 ---
 
 <kbd>Last updated: October 2026</kbd>

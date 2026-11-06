@@ -10,6 +10,12 @@ status: "GA"
 last_verified: "2026-10"
 taxonomy:
     category: cli
+custom_fields:
+    nav_category: "gk-cli-pull-requests-and-issues"
+    nav_label: "How to Track Pull Requests and Issues in GitKraken CLI"
+    nav_order: 40
+    nav_parent: ""
+    page_type: "content"
 ---
 
 <kbd>Last updated: October 2026</kbd>

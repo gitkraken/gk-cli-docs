@@ -10,6 +10,12 @@ status: "GA"
 last_verified: "2026-10"
 taxonomy:
     category: cli
+custom_fields:
+    nav_category: "gk-cli-json-output"
+    nav_label: "How to Script GitKraken CLI with JSON Output"
+    nav_order: 70
+    nav_parent: ""
+    page_type: "content"
 ---
 
 <kbd>Last updated: October 2026</kbd>
