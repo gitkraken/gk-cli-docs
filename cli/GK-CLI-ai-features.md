@@ -5,7 +5,7 @@ product: "GitKraken CLI"
 feature: "AI Features"
 content_type: "how-to"
 audience: "all"
-plan_required: "all"
+plan_required: "Pro"
 status: "GA"
 last_verified: "2026-10"
 taxonomy:
