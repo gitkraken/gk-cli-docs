@@ -6,7 +6,7 @@ feature: "Work Items"
 content_type: "how-to"
 audience: "all"
 plan_required: "all"
-status: "GA"
+status: "deprecated"
 last_verified: "2026-10"
 os_support: [Windows, macOS, Linux]
 integrations: []
