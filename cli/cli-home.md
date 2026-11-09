@@ -8,6 +8,10 @@ audience: "all"
 plan_required: "all"
 status: "GA"
 last_verified: "2026-10"
+os_support: [Windows, macOS, Linux]
+integrations: [github, gitlab, bitbucket, azure-devops, jira, linear, trello, claude-code, cursor, copilot, opencode, codex, copilot-cli, antigravity, pi, augment, grok]
+llms_include: true
+tags: [install, setup, sign-in, organization, providers, homebrew, winget, ai-hooks]
 taxonomy:
     category: cli
 custom_fields:

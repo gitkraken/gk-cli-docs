@@ -8,6 +8,10 @@ audience: "all"
 plan_required: "all"
 status: "GA"
 last_verified: "2026-10"
+os_support: [n/a]
+integrations: []
+llms_include: true
+tags: [support, response-times, support-hours, release-support, end-of-life, eula]
 taxonomy:
     category: cli
 custom_fields:

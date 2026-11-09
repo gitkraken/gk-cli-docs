@@ -8,6 +8,10 @@ audience: "all"
 plan_required: "all"
 status: "GA"
 last_verified: "2026-10"
+os_support: [Windows, macOS, Linux]
+integrations: [github, github-enterprise, gitlab, gitlab-self-managed, bitbucket, bitbucket-data-center, azure-devops, jira, jira-data-center, linear, trello]
+llms_include: true
+tags: [pull-requests, issues, launchpad, filters, assign-issues, multiple-accounts]
 taxonomy:
     category: cli
 custom_fields:
