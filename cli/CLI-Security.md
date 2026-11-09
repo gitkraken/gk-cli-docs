@@ -8,6 +8,10 @@ audience: "all"
 plan_required: "all"
 status: "GA"
 last_verified: "2026-10"
+os_support: [Windows, macOS, Linux]
+integrations: [openai, anthropic, openrouter, ollama, claude-code]
+llms_include: true
+tags: [security, data-storage, encryption, privacy, telemetry, ai-providers, agent-sessions]
 taxonomy:
     category: cli
 custom_fields:

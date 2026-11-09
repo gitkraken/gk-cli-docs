@@ -8,6 +8,10 @@ audience: "all"
 plan_required: "all"
 status: "GA"
 last_verified: "2026-10"
+os_support: [Windows, macOS, Linux]
+integrations: [openai, anthropic, openrouter, ollama]
+llms_include: true
+tags: [ai, commit-messages, compose, merge-conflicts, changelog, pull-requests, ai-providers, ai-credits]
 taxonomy:
     category: cli
 custom_fields:

@@ -8,6 +8,10 @@ audience: "all"
 plan_required: "all"
 status: "GA"
 last_verified: "2026-10"
+os_support: [Windows, macOS, Linux]
+integrations: [vscode, cursor, windsurf, trae, kiro, copilot, claude-code, opencode, codex, copilot-cli, antigravity, pi, augment, grok]
+llms_include: true
+tags: [gitlens, gitkraken-desktop, kepler, mcp, ai-agents, hooks, agent-sessions]
 taxonomy:
     category: cli
 custom_fields:

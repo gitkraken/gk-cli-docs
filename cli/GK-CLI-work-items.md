@@ -8,6 +8,10 @@ audience: "all"
 plan_required: "all"
 status: "GA"
 last_verified: "2026-10"
+os_support: [Windows, macOS, Linux]
+integrations: []
+llms_include: true
+tags: [work-items, workspaces, multi-repo, ai-commit, pull-requests, deprecated]
 taxonomy:
     category: cli
 custom_fields:

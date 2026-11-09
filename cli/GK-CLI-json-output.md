@@ -8,6 +8,10 @@ audience: "all"
 plan_required: "all"
 status: "GA"
 last_verified: "2026-10"
+os_support: [Windows, macOS, Linux]
+integrations: []
+llms_include: true
+tags: [json, scripting, ci, exit-codes, errors, dry-run, sessions, ai-agents]
 taxonomy:
     category: cli
 custom_fields:
