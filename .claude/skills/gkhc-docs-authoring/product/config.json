@@ -1,0 +1,82 @@
+{
+  "_comment": "Product config of the gkhc-docs-authoring skill for this help center. Local to the docs repo (product/ is never overwritten by skillsync). Seeded by GK-WP-HC-Design skills/seed_products.py; check_pages.py and preview/ read it.",
+  "key": "cli",
+  "name": "GitKraken CLI",
+  "category": "cli",
+  "content_dir": "cli",
+  "images_dir": "_images",
+  "home_slug": "cli-home",
+  "nav_file": "cli",
+  "max_depth": 5,
+  "toc_levels": [
+    2,
+    3
+  ],
+  "code_default_label": "Terminal",
+  "nav": {
+    "sections": null,
+    "section_fallback": false,
+    "parent_must_be_index": false,
+    "every_page_in_nav": false,
+    "card_fields_required": false,
+    "slug_prefix": ""
+  },
+  "features": {
+    "metric_pipeline": false,
+    "playbooks": false,
+    "settings_specs": false
+  },
+  "checks": {
+    "missing_link_target": "warn",
+    "missing_image": "error",
+    "figures_only": false,
+    "ignore_link_targets": []
+  },
+  "metadata": {
+    "check": "error",
+    "conditional": [
+      "os_support",
+      "integrations"
+    ],
+    "optional": [
+      "og_image"
+    ],
+    "constants": {
+      "product": "GitKraken CLI"
+    },
+    "defaults": {},
+    "plan_required": [
+      "all",
+      "Community",
+      "Pro",
+      "Advanced",
+      "Business",
+      "Enterprise",
+      "insights-add-on"
+    ],
+    "plan_required_vocabulary": "error",
+    "aliases": {},
+    "extra_fields": []
+  },
+  "other_category_pages": {},
+  "known_wp_images": {
+    "/wp-content/uploads/gk-cli-org-ls-new.png": [
+      "cli-home"
+    ],
+    "/wp-content/uploads/gk-cli-w-commit.png": [
+      "gk-cli-work-items"
+    ],
+    "/wp-content/uploads/gk-cli-w-info.png": [
+      "gk-cli-work-items"
+    ],
+    "/wp-content/uploads/gk-cli-work.png": [
+      "gk-cli-work-items"
+    ],
+    "/wp-content/uploads/gk-cli-ws-set-new.png": [
+      "cli-home"
+    ],
+    "/wp-content/uploads/gk_cli_setup_new.png": [
+      "cli-home"
+    ]
+  }
+}
