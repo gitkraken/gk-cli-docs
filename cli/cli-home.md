@@ -30,6 +30,8 @@ If you use GitLens or GitKraken Desktop, you may already have `gk` on your machi
 
 This page shows you how to install `gk`, sign in, and connect your accounts on macOS, Windows, or Linux.
 
+---
+
 <figure>
   <img src="/wp-content/uploads/gk_cli_setup_new.png" class="help-center-img img-bordered" alt="GitKraken CLI welcome screen in a terminal after installation." />
   <figcaption style="text-align: center; color: #888">GitKraken CLI setup</figcaption>
