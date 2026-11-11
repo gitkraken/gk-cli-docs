@@ -8,6 +8,10 @@ audience: "all"
 plan_required: "all"
 status: "GA"
 last_verified: "2026-10"
+os_support: [Windows, macOS, Linux]
+integrations: [claude-code, claude-desktop, cursor, vscode, copilot, copilot-cli, jetbrains-copilot, codex, windsurf, trae, kiro, zed, opencode, antigravity, augment, grok, pi]
+llms_include: true
+tags: [mcp, mcp-server, ai-agents, agent-skills, read-only, install, uninstall]
 taxonomy:
     category: cli
 ---
