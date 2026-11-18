@@ -1,12 +1,12 @@
 ---
-title: How to Manage Work Items in GitKraken CLI
-description: Start, review, commit, open pull requests for, and clean up a work item across multiple repositories with the deprecated gk work commands in GitKraken CLI.
+title: Work Items in GitKraken CLI (Legacy)
+description: Legacy reference for the gk work commands, which newer versions of GitKraken CLI don't include. See how they worked in earlier versions.
 product: "GitKraken CLI"
 feature: "Work Items"
 content_type: "how-to"
 audience: "all"
 plan_required: "all"
-status: "GA"
+status: "Legacy"
 last_verified: "2026-10"
 taxonomy:
     category: cli
@@ -14,7 +14,11 @@ taxonomy:
 
 <kbd>Last updated: October 2026</kbd>
 
-> **Deprecated:** As of GitKraken CLI 3.1.76, the `gk work` and `gk workspace` commands are deprecated and will be removed in a future release. They still work, but each command prints a deprecation warning. There's no direct replacement. For single-repository work, use standard Git commands with the [GitKraken CLI AI features](https://help.gitkraken.com/cli/GK-CLI-ai-features/), such as `gk ai commit` and `gk ai pr create`.
+> **Legacy page:** Newer versions of GitKraken CLI don't include the `gk work` and `gk workspace` commands, and no other commands replace them. This page describes how they worked in earlier versions.
+>
+> For work in a single repository, use standard Git commands with the [GitKraken CLI AI features](https://help.gitkraken.com/cli/GK-CLI-ai-features/), such as `gk ai commit` and `gk ai pr create`.
+
+## How Work Items Worked in Earlier Versions
 
 A work item is a task, such as a bug fix or feature, that spans more than one repository in your GitKraken workspace. With `gk work`, you can start the task, review changes, commit, open pull requests, and clean up in every repository at once, instead of repeating each step in each repository.
 

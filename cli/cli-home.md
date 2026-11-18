@@ -78,7 +78,6 @@ To use AI-powered features, such as commit message generation and pull request c
 ## Where to Find GitKraken CLI Documentation
 
 This Help Center explains what you can do with GitKraken CLI and how to use it in real workflows. Start with the [installation instructions](https://help.gitkraken.com/cli/cli-home/#how-to-install-gitkraken-cli) and the [setup steps](https://help.gitkraken.com/cli/cli-home/#how-to-start-using-gitkraken-cli-after-installation) on this page. For every command and flag, see the [GitKraken CLI command reference](https://gitkraken.github.io/gk-cli/docs/gk.html).
-
 ***
 
 ## How to Install GitKraken CLI
@@ -247,30 +246,6 @@ gk provider add <PROVIDER>
 ```
 
 To see the available options, run `gk provider add --help`. To connect a self-hosted instance or more than one account, see [How to Connect Providers in GitKraken CLI](https://help.gitkraken.com/cli/GK-CLI-providers/).
-
-### How to Load Repositories Into a GitKraken Workspace
-
-> **Note:** As of GitKraken CLI 3.1.76, the `gk workspace` commands are deprecated and will be removed in a future release. They still work, but each command prints a deprecation warning.
-
-To work with an existing GitKraken workspace from the CLI:
-
-1. List your workspaces:
-   ```
-   gk workspace list
-   ```
-2. Set the workspace you want to use:
-   ```
-   gk workspace set <NAME>
-   ```
-3. Clone the workspace repositories into a local folder (`gk ws` is short for `gk workspace`):
-   ```
-   gk ws clone <name> <root-path>
-   ```
-
-<figure>
-  <img src="/wp-content/uploads/gk-cli-ws-set-new.png" class="help-center-img img-bordered" alt="Terminal output after setting a GitKraken workspace and cloning its repositories." />
-  <figcaption style="text-align: center; color: #888">Setting a workspace and cloning its repositories in GitKraken CLI.</figcaption>
-</figure>
 
 ***
 

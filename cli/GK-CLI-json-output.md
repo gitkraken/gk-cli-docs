@@ -46,8 +46,6 @@ gk issue list jira --json | jq .
 
 GitKraken CLI doesn't print color codes in JSON mode, or when the output isn't going to a terminal.
 
-> **Note:** As of GitKraken CLI 3.1.75, `--output json` is deprecated. Use `--json` instead.
-
 ***
 
 ## How to Keep Only the Fields You Need
